@@ -4,7 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-exec --no-startup-id "setxkbmap -option ctrl:nocaps"
+
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -25,8 +25,8 @@ exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
 exec --no-startup-id feh --bg-fill ~/Pictures/shutthefuckup.jpg
 exec thorium-browser
 exec kitty
-exec --no-startup-id redshift-gtk
-exec --no-startup-id redshift -O 3300
+#exec --no-startup-id redshift-gtk
+#exec --no-startup-id redshift -O 3500
 for_window [class="^.*"] border pixel 2
 
 # ウインドウ間の隙間の広さ
@@ -111,7 +111,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s exec --no-startup-id spotify
+bindsym $mod+s exec --no-startup-id redshift -O 3300
 bindsym $mod+w exec --no-startup-id thorium-browser
 bindsym $mod+e layout toggle split
 
