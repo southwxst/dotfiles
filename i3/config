@@ -116,7 +116,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s exec --no-startup-id redshift -O 3300
-bindsym $mod+w exec --no-startup-id thorium-browser
+bindsym $mod+w exec --no-startup-id firefox
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
