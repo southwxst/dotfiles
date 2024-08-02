@@ -14,7 +14,7 @@ exec --no-startup-id redshift -O 3300
 exec --no-startup-id picom -b
 #exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
 exec kitty
-exec --no-startup-id feh --bg-fill ~/dotfiles/shutthefuckup.jpg
+exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper/shutthefuckup.jpg
 #exec --no-startup-id spotifyd --no-daemon
 exec --no-startup-id fcitx5
 exec  firefox
