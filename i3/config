@@ -4,7 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
+
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -93,7 +93,8 @@ bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
-bindsym $mod+Shift+q exec "i3lock -c 000000"
+bindsym $mod+Shift+q exec playerctl position 30+
+bindsym $mod+Shift+w exec playerctl position 30-
 
 bindsym $mod+Shift+z exec rofi-mixer
 # start dmenu (a program launcher)
@@ -222,7 +223,7 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
+exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
