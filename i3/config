@@ -38,6 +38,7 @@ exec "xautolock -detectsleep -time 15 -locker \"i3lock -c 000000\""
 exec --no-startup-id dex --autostart --environment i3
 
 # ウインドウ間の隙間の広さ
+exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 
 gaps top 8
 
