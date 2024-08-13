@@ -93,8 +93,8 @@ bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
-bindsym $mod+Shift+q exec playerctl position 30+
-bindsym $mod+Shift+w exec playerctl position 30-
+bindsym $mod+Shift+q exec pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo 
+bindsym $mod+Shift+w exec  pactl set-default-sink alsa_output.usb-Generic_USB2.0_Device_20170726905959-00.analog-stereo
 
 bindsym $mod+Shift+z exec rofi-mixer
 # start dmenu (a program launcher)
@@ -133,13 +133,13 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+s split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+v layout stacking
 #bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -230,5 +230,4 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-	 position top
 }
