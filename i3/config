@@ -12,11 +12,11 @@
 bindsym $mod+d exec --no-startup-id rofi -show drun
 #bindsym $mod+d exec --no-startup-id dmenu_run
 set $mod Mod4
-exec --no-startup-id redshift -O 3300
+exec --no-startup-id redshift -O 3000
 
 exec --no-startup-id copyq
-exec --no-startup-id picom -b
-#exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
+#exec --no-startup-id picom -b
+exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
 exec kitty
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper/shutthefuckup.jpg
 #exec --no-startup-id spotifyd --no-daemon
@@ -31,10 +31,10 @@ for_window [instance="copyq"] floating enable
 for_window [instance="copyq"] resize set 1000 600
 for_window [instance="copyq"] border pixel 5
 #plyaerctl settings
-bindsym $mod+c exec --no-startup-id playerctl previous
+bindsym $mod+z exec --no-startup-id playerctl previous
 
-bindsym $mod+x exec --no-startup-id playerctl play-pause
-bindsym $mod+z exec --no-startup-id playerctl next
+bindsym $mod+c exec --no-startup-id playerctl play-pause
+bindsym $mod+x exec --no-startup-id playerctl next
 
 bindsym $mod+Shift+x exec --no-startup-id rofi -show run
 focus_follows_mouse no
@@ -54,15 +54,15 @@ exec --no-startup-id dex --autostart --environment i3
 
 # ウインドウ間の隙間の広さ
 
-gaps top 8
+#gaps top 8
 
-gaps bottom 8
+#gaps bottom 8
 
-gaps right 8
+#gaps right 8
 
-gaps left 8
+#gaps left 8
 
-gaps inner 8
+#gaps inner 8
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
