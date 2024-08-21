@@ -12,7 +12,7 @@
 bindsym $mod+d exec --no-startup-id rofi -show drun
 #bindsym $mod+d exec --no-startup-id dmenu_run
 set $mod Mod4
-exec --no-startup-id redshift -O 3000
+exec --no-startup-id redshift -O 2800
 
 exec --no-startup-id copyq
 #exec --no-startup-id picom -b
@@ -31,12 +31,12 @@ for_window [instance="copyq"] floating enable
 for_window [instance="copyq"] resize set 1000 600
 for_window [instance="copyq"] border pixel 5
 #plyaerctl settings
-bindsym $mod+z exec --no-startup-id playerctl previous
+bindsym $mod+z exec --no-startup-id playerctl --player=spotify previous
 exec --no-startup-id alsactl --file ~/.config/asound.state restore
-bindsym $mod+c exec --no-startup-id playerctl play-pause
-bindsym $mod+x exec --no-startup-id playerctl next
+bindsym $mod+c exec --no-startup-id playerctl --player=spotify play-pause
+bindsym $mod+x exec --no-startup-id playerctl --player=spotify next 
 
-bindsym $mod+Shift+x exec --no-startup-id rofi -show run
+bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 focus_follows_mouse no
 bindsym $mod+w exec --no-startup-id firefox
 # Font for window titles. Will also be used by the bar unless a different font
@@ -87,6 +87,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 bindsym $mod+Shift+q exec pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo 
 bindsym $mod+Shift+w exec  pactl set-default-sink alsa_output.usb-Generic_USB2.0_Device_20170726905959-00.analog-stereo
+
 
 bindsym $mod+Shift+z exec rofi-mixer
 # start dmenu (a program launcher)
