@@ -15,13 +15,13 @@ set $mod Mod4
 exec --no-startup-id redshift -O 2800
 
 exec --no-startup-id copyq
-#exec --no-startup-id picom -b
-exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
+exec --no-startup-id picom -b
+#exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
 exec kitty
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper/wallpaper.jpg
 #exec --no-startup-id spotifyd --no-daemon
 exec --no-startup-id fcitx5
-exec  thorium-browser
+exec thorium-browser
 gaps inner 7
 gaps outer 2
 #exec --no-startup-id spotify-launcher
@@ -41,7 +41,7 @@ bindsym $mod+x exec --no-startup-id playerctl --player=spotify next
 bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 focus_follows_mouse no
 bindsym $mod+w exec --no-startup-id thorium-browser
-# Font for window titles. Will also be used by the bar unless a different font
+# Font for window tlitles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango: 5  JetBrainsMono Nerd Font Mono
 exec --no-startup-id dunst
