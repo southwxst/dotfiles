@@ -9,7 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
-
+bindsym $mod+n exec --no-startup-id brightnessctl set +5%
+bindsym $mod+m exec --no-startup-id brightnessctl set 5%-
 bindsym $mod+d exec --no-startup-id rofi -show drun
 #bindsym $mod+d exec --no-startup-id dmenu_run
 set $mod Mod4
