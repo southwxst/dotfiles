@@ -10,8 +10,6 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
 
-bindsym $mod+n exec --no-startup-id brightnessctl set +5%
-bindsym $mod+m exec --no-startup-id brightnessctl set 5%-
 bindsym $mod+d exec --no-startup-id rofi -show drun
 #bindsym $mod+d exec --no-startup-id dmenu_run
 set $mod Mod4
@@ -42,7 +40,7 @@ bindsym $mod+z exec --no-startup-id playerctl --player=spotify previous
 exec --no-startup-id alsactl --file ~/.config/asound.state restore
 bindsym $mod+c exec --no-startup-id playerctl --player=spotify play-pause
 bindsym $mod+x exec --no-startup-id playerctl --player=spotify next 
-
+exec --no-startup-id xinput set-prop "USB Gaming Mouse" "libinput Accel Profile Enabled" 0, 1
 #bindsym $mod+Left exec --no-startup-id playerctl position 1-
 #bindsym $mod+Right exec --no-startup-id playerctl position 1+ 
 
@@ -199,7 +197,8 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-
+bindsym $mod+n exec --no-startup-id brightnessctl set +5%
+bindsym $mod+m exec --no-startup-id brightnessctl set 5%-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -231,12 +230,12 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
+#exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
- #       position top
+#      position top
         status_command i3status
 }
