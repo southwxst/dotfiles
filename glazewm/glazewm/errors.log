@@ -1,0 +1,17 @@
+[2m2024-12-14T20:59:48.029979Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[49]: missing field `commands` at line 305 column 5
+[2m2024-12-14T21:00:51.618962Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general: missing field `cursor_jump` at line 34 column 3
+[2m2024-12-14T21:01:51.838284Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m gaps: data did not match any variant of untagged enum LengthValueDe at line 2 column 3
+[2m2024-12-14T21:02:30.293852Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m gaps: data did not match any variant of untagged enum LengthValueDe at line 2 column 3
+[2m2024-12-14T21:20:14.975395Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m missing field `window_effects`
+[2m2024-12-14T21:30:19.620186Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m duplicate field `keybindings`
+[2m2024-12-14T21:32:25.793315Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[4]: missing field `commands` at line 182 column 5
+[2m2024-12-14T21:34:13.002562Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[4]: missing field `commands` at line 182 column 5
+[2m2024-12-14T21:35:52.604829Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[4]: missing field `commands` at line 182 column 5
+[2m2024-12-14T21:36:50.239932Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[4]: missing field `commands` at line 182 column 5
+[2m2024-12-14T21:37:27.853444Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[4]: missing field `commands` at line 182 column 5
+[2m2024-12-14T21:37:42.186367Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[4]: missing field `commands` at line 182 column 5
+[2m2024-12-14T21:38:06.085844Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[4]: missing field `commands` at line 182 column 5
+[2m2024-12-14T21:40:36.128281Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[4]: missing field `commands` at line 182 column 5
+[2m2024-12-14T22:34:31.290720Z[0m [31mERROR[0m [2mglazewm::common::commands::shell_exec[0m[2m:[0m [3merr_message[0m[2m=[0m"Failed to execute '%userprofile%/.glzr/glazewm_monitoring.bat'.\n\nError: Program path is not valid for command '%userprofile%/.glzr/glazewm_monitoring.bat'."
+[2m2024-12-14T22:43:35.744664Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m channel closed
+[2m2024-12-17T12:15:32.591176Z[0m [31mERROR[0m [2mglazewm::common::commands::shell_exec[0m[2m:[0m [3merr_message[0m[2m=[0m"Failed to execute '%userprofile%/.glzr/glazewm_monitoring.bat'.\n\nError: Program path is not valid for command '%userprofile%/.glzr/glazewm_monitoring.bat'."
