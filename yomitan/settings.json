@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "date": "2024-12-19 05:52:33",
+    "date": "2024-12-19 05:55:40",
     "url": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/",
     "manifest": {
         "author": "Yomidevs",
@@ -1141,7 +1141,7 @@
                             "quality": 92
                         },
                         "terms": {
-                            "deck": "Mining Deck",
+                            "deck": "EN",
                             "model": "JP Mining Note",
                             "fields": {
                                 "Key": "{expression}",
