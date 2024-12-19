@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "date": "2024-12-19 05:56:58",
+    "date": "2024-12-19 07:19:39",
     "url": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/",
     "manifest": {
         "author": "Yomidevs",
@@ -992,7 +992,7 @@
                         "enableContextMenuScanSelected": true,
                         "stickySearchHeader": false,
                         "fontFamily": "",
-                        "fontSize": 12,
+                        "fontSize": 13,
                         "lineHeight": "1.5",
                         "showDebug": false
                     },
@@ -1096,7 +1096,7 @@
                         "hidePopupOnCursorExitDelay": 100,
                         "normalizeCssZoom": true,
                         "scanWithoutMousemove": true,
-                        "scanResolution": "word"
+                        "scanResolution": "character"
                     },
                     "dictionaries": [
                         {
@@ -1593,7 +1593,7 @@
                             },
                             {
                                 "action": "viewNotes",
-                                "key": "KeyV",
+                                "key": "KeyZ",
                                 "modifiers": [
                                     "alt"
                                 ],
