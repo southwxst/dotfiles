@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "date": "2024-12-19 10:43:57",
+    "date": "2024-12-19 22:43:27",
     "url": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/",
     "manifest": {
         "author": "Yomidevs",
@@ -365,9 +365,19 @@
                     },
                     "dictionaries": [
                         {
+                            "name": "Vicon Eng to Jp",
+                            "alias": "Vicon Eng to Jp",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
                             "name": "apple-en-ja-ipa",
                             "alias": "apple-en-ja-ipa",
-                            "enabled": false,
+                            "enabled": true,
                             "allowSecondarySearches": false,
                             "definitionsCollapsible": "not-collapsible",
                             "partsOfSpeechFilter": true,
@@ -383,16 +393,6 @@
                             "partsOfSpeechFilter": true,
                             "useDeinflections": true,
                             "styles": "\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}"
-                        },
-                        {
-                            "name": "Vicon Eng to Jp",
-                            "alias": "Vicon Eng to Jp",
-                            "enabled": true,
-                            "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible",
-                            "partsOfSpeechFilter": true,
-                            "useDeinflections": true,
-                            "styles": ""
                         }
                     ],
                     "parsing": {
@@ -414,54 +414,16 @@
                         },
                         "terms": {
                             "deck": "EN",
-                            "model": "JP Mining Note",
+                            "model": "Refold Sentence Miner: Word Only",
                             "fields": {
-                                "Key": "{expression}",
                                 "Word": "{expression}",
-                                "WordReading": "",
-                                "PAOverride": "",
-                                "PAOverrideText": "{expression}",
-                                "AJTWordPitch": "",
-                                "PrimaryDefinition": "{glossary-brief}",
-                                "PrimaryDefinitionPicture": "",
-                                "Sentence": "{sentence}",
-                                "SentenceReading": "",
-                                "AltDisplayWord": "",
-                                "AltDisplaySentence": "",
-                                "AltDisplayPASentenceCard": "",
-                                "AltDisplayAudioCard": "",
-                                "AdditionalNotes": "",
-                                "Hint": "",
-                                "HintNotHidden": "",
-                                "IsSentenceCard": "",
-                                "IsTargetedSentenceCard": "",
-                                "IsClickCard": "",
-                                "IsHoverCard": "",
-                                "IsHintCard": "",
-                                "IsSentenceFirstCard": "",
-                                "IsAudioCard": "",
-                                "PAShowInfo": "",
-                                "PATestOnlyWord": "",
-                                "PADoNotTest": "",
-                                "PASeparateWordCard": "",
-                                "PASeparateSentenceCard": "",
-                                "SeparateAudioCard": "",
-                                "SeparateSentenceAudioCard": "",
-                                "Picture": "",
-                                "WordAudio": "",
-                                "SentenceAudio": "",
-                                "PAGraphs": "",
-                                "PAPositions": "",
-                                "FrequenciesStylized": "",
-                                "FrequencySort": "",
-                                "PASilence": "",
-                                "WordReadingHiragana": "",
-                                "YomichanWordTags": "",
-                                "SecondaryDefinition": "",
-                                "ExtraDefinitions": "",
-                                "UtilityDictionaries": "",
-                                "CardCache": "",
-                                "Comment": ""
+                                "Definitions 1": "{glossary-brief}",
+                                "Definitions 2": "",
+                                "Example Sentence": "",
+                                "Sentence Translation": "",
+                                "word_audio": "",
+                                "sentence_audio": "",
+                                "image": ""
                             }
                         },
                         "kanji": {
