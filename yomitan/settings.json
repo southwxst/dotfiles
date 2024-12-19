@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "date": "2024-12-19 09:33:16",
+    "date": "2024-12-19 10:43:57",
     "url": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/",
     "manifest": {
         "author": "Yomidevs",
@@ -398,7 +398,7 @@
                     "parsing": {
                         "enableScanningParser": true,
                         "enableMecabParser": false,
-                        "selectedParser": null,
+                        "selectedParser": "scan",
                         "termSpacing": true,
                         "readingMode": "hiragana"
                     },
@@ -413,7 +413,7 @@
                             "quality": 92
                         },
                         "terms": {
-                            "deck": "test",
+                            "deck": "EN",
                             "model": "JP Mining Note",
                             "fields": {
                                 "Key": "{expression}",
