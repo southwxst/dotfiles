@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "date": "2024-12-19 22:43:27",
+    "date": "2024-12-20 03:20:06",
     "url": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/",
     "manifest": {
         "author": "Yomidevs",
@@ -414,7 +414,7 @@
                         },
                         "terms": {
                             "deck": "EN",
-                            "model": "Refold Sentence Miner: Word Only",
+                            "model": "Refold Sentence Miner: Sentence",
                             "fields": {
                                 "Word": "{expression}",
                                 "Definitions 1": "{glossary-brief}",
