@@ -22,7 +22,7 @@ exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
 exec anki
 #exec --no-startup-id spotifyd --no-daemon
 exec --no-startup-id fcitx5
-exec brave
+exec thorium-browser
 exec --no-startup-id flameshot
 exec --no-startup-id nitrogen --restore
 gaps inner 7
@@ -49,7 +49,7 @@ exec --no-startup-id xinput set-prop "USB Gaming Mouse" "libinput Accel Profile 
 
 bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 focus_follows_mouse no
-bindsym $mod+w exec brave
+bindsym $mod+w exec thorium-browser
 # Font for window tlitles. Will also be used by the bar unless a different font
 
 # is used in the bar {} block below.
