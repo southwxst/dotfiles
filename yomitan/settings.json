@@ -1,7 +1,7 @@
 {
     "version": 0,
-    "date": "2024-12-20 03:20:06",
-    "url": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/",
+    "date": "2024-12-21 05:48:23",
+    "url": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/",
     "manifest": {
         "author": "Yomidevs",
         "browser_specific_settings": {
@@ -24,9 +24,9 @@
         "manifest_version": 3,
         "name": "Yomitan Popup Dictionary",
         "short_name": null,
-        "version": "24.12.10.2",
+        "version": "24.12.12.0",
         "background": {
-            "page": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/background.html"
+            "page": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/background.html"
         },
         "content_scripts": [
             {
@@ -36,7 +36,7 @@
                 "exclude_matches": null,
                 "include_globs": null,
                 "js": [
-                    "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/js/app/content-script-wrapper.js"
+                    "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/js/app/content-script-wrapper.js"
                 ],
                 "match_about_blank": true,
                 "match_origin_as_fallback": null,
@@ -58,13 +58,13 @@
             "<all_urls>"
         ],
         "icons": {
-            "16": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon16.png",
-            "19": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon19.png",
-            "32": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon32.png",
-            "38": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon38.png",
-            "48": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon48.png",
-            "64": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon64.png",
-            "128": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon128.png"
+            "16": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon16.png",
+            "19": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon19.png",
+            "32": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon32.png",
+            "38": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon38.png",
+            "48": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon48.png",
+            "64": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon64.png",
+            "128": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon128.png"
         },
         "incognito": "spanning",
         "minimum_chrome_version": "102.0.0.0",
@@ -78,7 +78,7 @@
         "options_ui": {
             "browser_style": false,
             "open_in_tab": true,
-            "page": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/settings.html"
+            "page": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/settings.html"
         },
         "permissions": [
             "storage",
@@ -104,15 +104,15 @@
             "browser_style": false,
             "default_area": null,
             "default_icon": {
-                "16": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon16.png",
-                "19": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon19.png",
-                "32": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon32.png",
-                "38": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon38.png",
-                "48": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon48.png",
-                "64": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon64.png",
-                "128": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/images/icon128.png"
+                "16": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon16.png",
+                "19": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon19.png",
+                "32": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon32.png",
+                "38": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon38.png",
+                "48": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon48.png",
+                "64": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon64.png",
+                "128": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/images/icon128.png"
             },
-            "default_popup": "moz-extension://15df388f-035f-42e8-827d-50dbae8eb902/action-popup.html",
+            "default_popup": "moz-extension://76d27661-6cae-47f0-af13-54fa5005a2fe/action-popup.html",
             "default_title": "Yomitan",
             "theme_icons": null
         },
@@ -185,16 +185,16 @@
     "environment": {
         "browser": "firefox",
         "platform": {
-            "os": "win"
+            "os": "linux"
         }
     },
-    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
     "permissions": {
         "origins": [
+            "<all_urls>",
             "http://*/*",
             "https://*/*",
-            "file://*/*",
-            "<all_urls>"
+            "file://*/*"
         ],
         "permissions": [
             "storage",
@@ -414,16 +414,16 @@
                         },
                         "terms": {
                             "deck": "EN",
-                            "model": "Refold Sentence Miner: Sentence",
+                            "model": "sentence mining",
                             "fields": {
-                                "Word": "{expression}",
-                                "Definitions 1": "{glossary-brief}",
-                                "Definitions 2": "",
-                                "Example Sentence": "",
-                                "Sentence Translation": "",
-                                "word_audio": "",
-                                "sentence_audio": "",
-                                "image": ""
+                                "word": "{expression}",
+                                "word audio": "",
+                                "image": "",
+                                "sentence": "{sentence}",
+                                "sentence audio": "",
+                                "definition": "{glossary-brief}",
+                                "ts": "",
+                                "definiton2": ""
                             }
                         },
                         "kanji": {
