@@ -1,0 +1,48 @@
+{
+	"name": "Vimium C",
+	"@time": "12/28/2024, 7:44:54 PM",
+	"time": 1735382694211,
+	"environment": {
+		"extension": "2.11.3",
+		"platform": "linux",
+		"chromium": 131
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "x ",
+			"pattern": ":https://www.youtube.com/"
+		},
+		{
+			"passKeys": "z ",
+			"pattern": ":https://www.youtube.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://sushida.net/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://sushida.net/"
+		}
+	],
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"unmap r",
+		"unmap d",
+		"map h goBack",
+		"map l goForward",
+		"map H previousTab",
+		"map L nextTab",
+		"unmap x",
+		"map w removeTab",
+		""
+	],
+	"keyupTime": 100,
+	"scrollStepSize": 300,
+	"vimSync": true
+}
