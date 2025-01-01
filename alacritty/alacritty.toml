@@ -1,0 +1,36 @@
+##[colors]
+#primary.background = "0x282828"
+#primary.foreground = "0xd4be98"
+#
+#[colors.normal]
+#black   = "0x3c3836"
+#red     = "0xea6962"
+#green   = "0xa9b665"
+#yellow  = "0xd8a657"
+#blue    = "0x7daea3"
+#magenta = "0xd3869b"
+#cyan    = "0x89b482"
+#white   = "0xd4be98"
+#
+#[colors.bright]
+#black   = "0x3c3836"
+#red     = "0xea6962"
+#green   = "0xa9b665"
+#yellow  = "0xd8a657"
+#blue    = "0x7daea3"
+#magenta = "0xd3869b"
+#cyan    = "0x89b482"
+#white   = "0xd4be98"
+
+#[window]
+#
+#opacity = 0.9
+#
+[font]
+
+normal.family = "JetBrainsMono Nerd Font Mono"
+bold.family = "JetBrainsMono Nerd Font Mono"
+italic.family = "JetBrainsMono Nerd Font Mono"
+bold_italic.family = "JetBrainsMono Nerd Font Mono"
+
+size = 6.0
