@@ -8,16 +8,15 @@
 
 general {
         colors = true
-        interval = 5
+        interval = 1
 	output_format = "i3bar"
 }
 
+order += "memory"
 order += "volume master"
 order += "cpu_usage"
-order += "disk /"
 order += "battery all"
 order += "tztime local"
-
 cpu_usage {
         format= "CPU %usage"
         max_threshold= 75
@@ -41,6 +40,12 @@ ethernet _first_ {
         format_down = "E: down"
 }
 
+memory {
+        format = "%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
 #battery all {
 #        format = "%status %percentage %remaining"
 #}
@@ -56,16 +61,16 @@ battery all {
 }
 
 tztime local {
-        format = "%m-%d %I:%M"
+        format = " %A %m-%d %I:%M"
 }
 
 load {
         format = "%1min"
 }
 
+
 cpu_temperature 0 {
         format = "T: %degrees °C"
         path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
-
 

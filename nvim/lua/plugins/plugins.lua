@@ -20,9 +20,17 @@ return {
   },
   {
     "nvim-neorg/neorg",
-    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-    version = "*", -- Pin Neorg to the latest stable release
-    config = true,
+    config = function() end,
+  },
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = true, -- 必要なときに読み込む設定（オプション）
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.8",
+    -- or                              , branch = '0.1.x',
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
     "goolord/alpha-nvim",
@@ -36,6 +44,7 @@ return {
       require("alpha").setup(startify.config)
     end,
   },
+
   {
     "lervag/vimtex",
     lazy = false, -- we don't want to lazy load VimTeX
