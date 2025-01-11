@@ -10,20 +10,25 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
 
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+Shift+a exec --no-startup-id rofi -show calc 
 #bindsym $mod+d exec --no-startup-id dmenu_run
 set $mod Mod4
-exec --no-startup-id redshift -O 2800
+#exec --no-startup-id redshift -O 2800
 exec --no-startup-id lxpolkit
 exec --no-startup-id copyq
 #exec --no-startup-id picom -b
 exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
-#exec kitty
+#exec ghostty
 exec anki
 #exec --no-startup-id spotifyd --no-daemon
 exec --no-startup-id fcitx5
-exec brave
-exec --no-startup-id flameshot
+# Google翻訳を開くショートカット
+bindsym $mod+Shift+g exec --no-startup-id firefox https://translate.google.com
+# ChatGPTを開くショートカット
+bindsym $mod+g exec --no-startup-id firefox https://chat.openai.com
+exec firefox
+#exec --no-startup-id flameshot
 exec --no-startup-id nitrogen --restore
 gaps inner 7
 gaps outer 1
@@ -41,6 +46,14 @@ exec --no-startup-id alsactl --file ~/.config/asound.state restore
 bindsym $mod+c exec --no-startup-id playerctl --player=spotify play-pause
 bindsym $mod+x exec --no-startup-id playerctl --player=spotify next 
 exec --no-startup-id xinput set-prop "USB Gaming Mouse" "libinput Accel Profile Enabled" 0, 1
+bindsym $mod+u exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+
+
+bindsym $mod+y exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+
+bindsym $mod+F1 exec --no-startup-idpactl set-sink-mute @DEFAULT_SINK@ toggle
+ 
 #bindsym $mod+Left exec --no-startup-id playerctl position 1-
 #bindsym $mod+Right exec --no-startup-id playerctl position 1+ 
 
@@ -49,7 +62,7 @@ exec --no-startup-id xinput set-prop "USB Gaming Mouse" "libinput Accel Profile 
 
 bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 focus_follows_mouse no
-bindsym $mod+w exec brave
+bindsym $mod+w exec firefox
 # Font for window tlitles. Will also be used by the bar unless a different font
 
 # is used in the bar {} block below.
@@ -93,7 +106,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+q kill
@@ -102,7 +115,7 @@ bindsym $mod+Shift+w exec  pactl set-default-sink  alsa_output.usb-Generic_USB2.
 bindsym $mod+o exec flameshot gui	
 
 
-bindsym +Shift+z exec  alsactl --file ~/.config/asound.state restore
+#bindsym +Shift+z exec  alsactl --file ~/.config/asound.state restore
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id rofi -show drun
 # A more modern dmenu replacement is rofi:
@@ -120,7 +133,7 @@ bindsym $mod+j focus down
 # alternatively, you can use the cursor keys:
 #bindsym $mod+Left focus left
 #bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+#bindsym $mod+Up focus up
 #bindsym $mod+Right focus right
 
 # move focused window
@@ -145,7 +158,7 @@ bindsym $mod+s split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+v layout stacking
+#bindsym $mod+v layout stacking
 #bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -197,15 +210,17 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-bindsym $mod+n exec --no-startup-id brightnessctl set +5%
-bindsym $mod+m exec --no-startup-id brightnessctl set 5%-
+bindsym $mod+n exec --no-startup-id brightnessctl s +5%
+bindsym $mod+m exec --no-startup-id brightnessctl s 3%-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
+# サスペンドとロックを同時に行う
+bindsym $mod+Shift+z exec i3lock
+exec_always for id in $(xinput list | grep "ydotool.*pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -239,3 +254,4 @@ bar {
 #      position top
         status_command i3status
 }
+
