@@ -16,7 +16,11 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 eval "$(zoxide init zsh)"
 alias y='yazi'
+alias tf='thefuck'
 alias v='nvim'
+export FZF_CTRL_T_COMMAND="find . -type f"
+export FZF_DEFAULT_COMMAND="find . -type f"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -79,7 +83,7 @@ alias v='nvim'
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
-
+fzf vi-mode
   )
 
 source $ZSH/oh-my-zsh.sh
