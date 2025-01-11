@@ -18,6 +18,7 @@ eval "$(zoxide init zsh)"
 alias y='yazi'
 alias tf='thefuck'
 alias v='nvim'
+alias cl="xclip -selection clipboard"
 export FZF_CTRL_T_COMMAND="find . -type f"
 export FZF_DEFAULT_COMMAND="find . -type f"
 
