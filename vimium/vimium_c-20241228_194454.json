@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "12/28/2024, 7:44:54 PM",
-	"time": 1735382694211,
+	"@time": "1/12/2025, 3:48:58 PM",
+	"time": 1736664538784,
 	"environment": {
 		"extension": "2.11.3",
 		"platform": "linux",
@@ -32,7 +32,6 @@
 	"keyLayout": 2,
 	"keyMappings": [
 		"#!no-check",
-		"unmap r",
 		"unmap d",
 		"map h goBack",
 		"map l goForward",
