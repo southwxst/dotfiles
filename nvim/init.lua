@@ -1,13 +1,7 @@
-require("config.lazy")
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-vim.o.modifiable = true
-vim.opt.conceallevel = 2
-vim.opt.concealcursor = "nc"
+require("config.lazy") -- nvim-tree をトグルするショートカットを追加
+require("lspconfig").pyright.setup({})
+-- nvim-tree でファイルを見つけるショートカットを追加
+--
 vim.api.nvim_set_keymap("n", "<C-e>", ":Neotree toggle<CR>", { noremap = true, silent = true })
--- init.lua
-local org = require("orgmode")
 
-org.setup({
-  org_agenda_files = { "~/org/todo.org" }, -- 必要なファイルパスが正しいことを確認
-  org_default_notes_file = "~/path/to/default/capture/file.org", -- 必要なファイルパスが正しいことを確認
-})
+vim.api.nvim_set_keymap("n", "<C-n>", ":!python3 %<CR>", { noremap = true, silent = true })

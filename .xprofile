@@ -1,0 +1,3 @@
+redshift -O 2800
+setxkbmap -option 'caps:ctrl_modifier'
+setxkbmap -option compose:ralt
