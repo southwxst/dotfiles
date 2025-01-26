@@ -19,7 +19,7 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id copyq
 exec --no-startup-id picom -b
 #exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
-#exec ghostty
+exec ghostty
 exec anki
 #exec --no-startup-id spotifyd --no-daemon
 exec --no-startup-id fcitx5
