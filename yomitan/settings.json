@@ -1,84 +1,94 @@
 {
     "version": 0,
-    "date": "2025-01-12 06:43:39",
-    "url": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/",
+    "date": "2025-01-27 16:06:21",
+    "url": "chrome-extension://likgccmbimhjbgkjambclfkhldnlhbnn/",
     "manifest": {
-        "author": "Yomidevs",
-        "browser_specific_settings": {
-            "gecko": {
-                "admin_install_only": null,
-                "id": "{6b733b82-9261-47ee-a595-2dda294a4d08}",
-                "strict_max_version": null,
-                "strict_min_version": "115.0",
-                "update_url": null
+        "action": {
+            "default_icon": {
+                "16": "images/icon16.png",
+                "19": "images/icon19.png",
+                "32": "images/icon32.png",
+                "38": "images/icon38.png",
+                "48": "images/icon48.png",
+                "64": "images/icon64.png",
+                "128": "images/icon128.png"
             },
-            "gecko_android": {
-                "strict_max_version": null,
-                "strict_min_version": "115.0"
-            }
+            "default_popup": "action-popup.html",
+            "default_title": "Yomitan"
         },
-        "description": "Popup dictionary for language learning",
-        "developer": null,
-        "homepage_url": null,
-        "install_origins": null,
-        "manifest_version": 3,
-        "name": "Yomitan Popup Dictionary",
-        "short_name": null,
-        "version": "25.1.5.0",
+        "author": {
+            "email": "themoeway@googlegroups.com"
+        },
         "background": {
-            "page": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/background.html"
+            "service_worker": "sw.js",
+            "type": "module"
+        },
+        "commands": {
+            "openInfoPage": {
+                "description": "Open the info page"
+            },
+            "openPopupWindow": {
+                "description": "Open the popup window"
+            },
+            "openSearchPage": {
+                "description": "Open the search page",
+                "suggested_key": {
+                    "default": "Alt+Insert"
+                }
+            },
+            "openSettingsPage": {
+                "description": "Open the settings page"
+            },
+            "toggleTextScanning": {
+                "description": "Toggle text scanning on/off",
+                "suggested_key": {
+                    "default": "Alt+Delete"
+                }
+            }
         },
         "content_scripts": [
             {
                 "all_frames": true,
-                "css": null,
-                "exclude_globs": null,
-                "exclude_matches": null,
-                "include_globs": null,
                 "js": [
-                    "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/js/app/content-script-wrapper.js"
+                    "js/app/content-script-wrapper.js"
                 ],
                 "match_about_blank": true,
-                "match_origin_as_fallback": null,
                 "matches": [
                     "http://*/*",
                     "https://*/*",
                     "file://*/*"
                 ],
-                "run_at": "document_idle",
-                "world": "ISOLATED"
+                "run_at": "document_idle"
             }
         ],
         "content_security_policy": {
-            "extension_pages": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; img-src blob: 'self'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *"
+            "extension_pages": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; img-src blob: 'self'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *",
+            "sandbox": "sandbox allow-scripts; default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'unsafe-inline'"
         },
-        "granted_host_permissions": false,
-        "hidden": false,
+        "description": "Popup dictionary for language learning",
         "host_permissions": [
             "<all_urls>"
         ],
         "icons": {
-            "16": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon16.png",
-            "19": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon19.png",
-            "32": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon32.png",
-            "38": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon38.png",
-            "48": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon48.png",
-            "64": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon64.png",
-            "128": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon128.png"
+            "16": "images/icon16.png",
+            "19": "images/icon19.png",
+            "32": "images/icon32.png",
+            "38": "images/icon38.png",
+            "48": "images/icon48.png",
+            "64": "images/icon64.png",
+            "128": "images/icon128.png"
         },
-        "incognito": "spanning",
+        "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuFMG+/vjX2le7bR1dzuuLZwLxycxTxo033lLgMvO2BYQeQjIxhHazptr+34TX9oN71jnDxc11MWIl/pJPXVhdWyawrVNX9AVSz0kqOcvv0TqJAoVofLeAtRAeANjGjIM6QN46SAq9RAsKh60+0ZxYVWasFHB0gdbIaucJE54sXcUOGBsCah/ZziZMsunEhWpUC0nKT3eW9/eRQVHMBVFQ06R1luESf2f0EXbiS70smI0j3jb0xxWnbHQS8Bz20WZi0/kcysCmU/suMKCzdRXENWVcPG2xpcIYbSXBUHuP25jr3qElq5VEqeIUeHdYHd0GbkhlHPG0Cuo38q6D4lQ5wIDAQAB",
+        "manifest_version": 3,
         "minimum_chrome_version": "102.0.0.0",
-        "minimum_opera_version": null,
-        "optional_host_permissions": [],
+        "name": "Yomitan Popup Dictionary",
         "optional_permissions": [
             "clipboardRead",
             "nativeMessaging"
         ],
-        "options_page": null,
         "options_ui": {
-            "browser_style": false,
             "open_in_tab": true,
-            "page": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/settings.html"
+            "page": "settings.html"
         },
         "permissions": [
             "storage",
@@ -86,124 +96,52 @@
             "unlimitedStorage",
             "declarativeNetRequest",
             "scripting",
+            "offscreen",
             "contextMenus"
         ],
+        "sandbox": {
+            "pages": [
+                "template-renderer.html"
+            ]
+        },
+        "update_url": "https://clients2.google.com/service/update2/crx",
+        "version": "25.1.5.0",
         "web_accessible_resources": [
             {
-                "extension_ids": null,
                 "matches": [
                     "<all_urls>"
                 ],
                 "resources": [
-                    "/popup.html",
-                    "/js/*",
-                    "/lib/resvg.wasm"
+                    "popup.html",
+                    "template-renderer.html",
+                    "js/*",
+                    "lib/resvg.wasm"
                 ]
             }
-        ],
-        "action": {
-            "browser_style": false,
-            "default_area": null,
-            "default_icon": {
-                "16": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon16.png",
-                "19": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon19.png",
-                "32": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon32.png",
-                "38": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon38.png",
-                "48": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon48.png",
-                "64": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon64.png",
-                "128": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/images/icon128.png"
-            },
-            "default_popup": "moz-extension://a04c45ba-762d-4c7e-a5ae-a670b3a5f9ab/action-popup.html",
-            "default_title": "Yomitan",
-            "theme_icons": null
-        },
-        "chrome_settings_overrides": null,
-        "commands": {
-            "toggleTextScanning": {
-                "description": "Toggle text scanning on/off",
-                "suggested_key": {
-                    "additionalProperties": null,
-                    "android": null,
-                    "chromeos": null,
-                    "default": "Alt+Delete",
-                    "ios": null,
-                    "linux": null,
-                    "mac": null,
-                    "windows": null
-                }
-            },
-            "openInfoPage": {
-                "description": "Open the info page",
-                "suggested_key": null
-            },
-            "openSettingsPage": {
-                "description": "Open the settings page",
-                "suggested_key": null
-            },
-            "openSearchPage": {
-                "description": "Open the search page",
-                "suggested_key": {
-                    "additionalProperties": null,
-                    "android": null,
-                    "chromeos": null,
-                    "default": "Alt+Insert",
-                    "ios": null,
-                    "linux": null,
-                    "mac": null,
-                    "windows": null
-                }
-            },
-            "openPopupWindow": {
-                "description": "Open the popup window",
-                "suggested_key": null
-            }
-        },
-        "devtools_page": null,
-        "omnibox": null,
-        "page_action": null,
-        "sidebar_action": null,
-        "chrome_url_overrides": null,
-        "declarative_net_request": null,
-        "default_locale": null,
-        "l10n_resources": null,
-        "protocol_handlers": null,
-        "theme_experiment": null,
-        "experiment_apis": null,
-        "applications": {
-            "gecko": {
-                "admin_install_only": null,
-                "id": "{6b733b82-9261-47ee-a595-2dda294a4d08}",
-                "strict_max_version": null,
-                "strict_min_version": "115.0",
-                "update_url": null
-            },
-            "gecko_android": {
-                "strict_max_version": null,
-                "strict_min_version": "115.0"
-            }
-        }
+        ]
     },
     "environment": {
-        "browser": "firefox",
+        "browser": "chrome",
         "platform": {
-            "os": "linux"
+            "os": "win"
         }
     },
-    "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
     "permissions": {
         "origins": [
             "<all_urls>",
+            "file:///*",
             "http://*/*",
-            "https://*/*",
-            "file://*/*"
+            "https://*/*"
         ],
         "permissions": [
-            "storage",
             "clipboardWrite",
+            "contextMenus",
+            "storage",
             "unlimitedStorage",
             "declarativeNetRequest",
             "scripting",
-            "contextMenus"
+            "offscreen"
         ]
     },
     "options": {
@@ -366,6 +304,16 @@
                     },
                     "dictionaries": [
                         {
+                            "name": "apple-en-ja-ipa",
+                            "alias": "apple-en-ja-ipa",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
                             "name": "kty-en-ja",
                             "alias": "kty-en-ja",
                             "enabled": true,
@@ -386,9 +334,29 @@
                             "styles": ""
                         },
                         {
-                            "name": "apple-en-ja-ipa",
-                            "alias": "apple-en-ja-ipa",
-                            "enabled": true,
+                            "name": "kty-fr-en",
+                            "alias": "kty-fr-en",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ".tag[data-details='masculine'] .tag-label{background-color: #4d82e8;}\n.tag[data-details='feminine'] .tag-label{background-color: #ca4d93;}\n.tag[data-details='neuter'] .tag-label{background-color: #40ac65;}\n\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
+                        },
+                        {
+                            "name": "kty-fr-ja",
+                            "alias": "kty-fr-ja",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": "\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
+                        },
+                        {
+                            "name": "Vicon Fre to Eng",
+                            "alias": "Vicon Fre to Eng",
+                            "enabled": false,
                             "allowSecondarySearches": false,
                             "definitionsCollapsible": "not-collapsible",
                             "partsOfSpeechFilter": true,
@@ -414,7 +382,7 @@
                             "quality": 92
                         },
                         "terms": {
-                            "deck": "EN",
+                            "deck": "A::EN",
                             "model": "sentence mining",
                             "fields": {
                                 "word": "{expression}",
@@ -961,6 +929,16 @@
                     },
                     "dictionaries": [
                         {
+                            "name": "apple-en-ja-ipa",
+                            "alias": "apple-en-ja-ipa",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
                             "name": "kty-en-ja",
                             "alias": "kty-en-ja",
                             "enabled": true,
@@ -981,9 +959,29 @@
                             "styles": ""
                         },
                         {
-                            "name": "apple-en-ja-ipa",
-                            "alias": "apple-en-ja-ipa",
-                            "enabled": true,
+                            "name": "kty-fr-en",
+                            "alias": "kty-fr-en",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ".tag[data-details='masculine'] .tag-label{background-color: #4d82e8;}\n.tag[data-details='feminine'] .tag-label{background-color: #ca4d93;}\n.tag[data-details='neuter'] .tag-label{background-color: #40ac65;}\n\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
+                        },
+                        {
+                            "name": "kty-fr-ja",
+                            "alias": "kty-fr-ja",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": "\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
+                        },
+                        {
+                            "name": "Vicon Fre to Eng",
+                            "alias": "Vicon Fre to Eng",
+                            "enabled": false,
                             "allowSecondarySearches": false,
                             "definitionsCollapsible": "not-collapsible",
                             "partsOfSpeechFilter": true,
@@ -1399,9 +1397,653 @@
                     }
                 },
                 "id": "3bbd839cb18ff79b230944974e9d6bab"
+            },
+            {
+                "name": "french",
+                "conditionGroups": [],
+                "options": {
+                    "general": {
+                        "enable": true,
+                        "language": "fr",
+                        "resultOutputMode": "group",
+                        "debugInfo": false,
+                        "maxResults": 32,
+                        "showAdvanced": true,
+                        "showDebug": false,
+                        "popupDisplayMode": "default",
+                        "popupWidth": 400,
+                        "popupHeight": 250,
+                        "popupHorizontalOffset": 0,
+                        "popupVerticalOffset": 10,
+                        "popupHorizontalOffset2": 10,
+                        "popupVerticalOffset2": 0,
+                        "popupHorizontalTextPosition": "below",
+                        "popupVerticalTextPosition": "before",
+                        "popupScalingFactor": 0.9,
+                        "popupScaleRelativeToPageZoom": false,
+                        "popupScaleRelativeToVisualViewport": true,
+                        "showGuide": false,
+                        "enableContextMenuScanSelected": true,
+                        "compactTags": false,
+                        "glossaryLayoutMode": "default",
+                        "mainDictionary": "apple-en-ja-ipa",
+                        "popupTheme": "dark",
+                        "popupOuterTheme": "none",
+                        "customPopupCss": ":root[data-theme=\"dark\"] {\n    --background-color: #282828;\n    --text-color: #fbf1c7;\n    --tag-frequency-background-color: #67679A;\n    --tag-part-of-speech-background-color: #67679A;\n    --reason-text-color: #808080;\n    --notification-text-color: #FFFFFF;\n    --notification-background-color: #3B4252;\n    --sidebar-background-color: #262733;\n    --sidebar-button-background-color-hover: #644EA7;\n    --sidebar-button-danger-background-color-hover: #BF616A;\n    --sidebar-button-icon-color: #A89BD0;\n    --accent-color: #67679A;\n    --dict-color: #9057AD;\n    --dict-text-color: #FFFFFF;\n}\n\n",
+                        "customPopupOuterCss": "",
+                        "enableWanakana": true,
+                        "showPitchAccentDownstepNotation": true,
+                        "showPitchAccentPositionNotation": true,
+                        "showPitchAccentGraph": false,
+                        "showIframePopupsInRootFrame": true,
+                        "useSecurePopupFrameUrl": true,
+                        "usePopupShadowDom": true,
+                        "usePopupWindow": false,
+                        "popupCurrentIndicatorMode": "triangle",
+                        "popupActionBarVisibility": "auto",
+                        "popupActionBarLocation": "top",
+                        "frequencyDisplayMode": "split-tags-grouped",
+                        "termDisplayMode": "ruby",
+                        "sortFrequencyDictionary": null,
+                        "sortFrequencyDictionaryOrder": "descending",
+                        "stickySearchHeader": false,
+                        "fontFamily": "",
+                        "fontSize": 14,
+                        "lineHeight": "1.5"
+                    },
+                    "popupWindow": {
+                        "width": 400,
+                        "height": 250,
+                        "left": 0,
+                        "top": 0,
+                        "useLeft": false,
+                        "useTop": false,
+                        "windowType": "popup",
+                        "windowState": "normal"
+                    },
+                    "audio": {
+                        "enabled": true,
+                        "volume": 100,
+                        "autoPlay": false,
+                        "sources": []
+                    },
+                    "scanning": {
+                        "inputs": [
+                            {
+                                "include": "shift",
+                                "exclude": "mouse0",
+                                "types": {
+                                    "mouse": true,
+                                    "touch": false,
+                                    "pen": false
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchTap": true,
+                                    "scanOnTouchMove": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": false,
+                                    "preventPenScrolling": false
+                                }
+                            },
+                            {
+                                "include": "",
+                                "exclude": "",
+                                "types": {
+                                    "mouse": false,
+                                    "touch": true,
+                                    "pen": true
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchTap": true,
+                                    "scanOnTouchMove": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": true,
+                                    "preventPenScrolling": true
+                                }
+                            }
+                        ],
+                        "preventMiddleMouse": {
+                            "onWebPages": false,
+                            "onPopupPages": false,
+                            "onSearchPages": false,
+                            "onSearchQuery": false
+                        },
+                        "selectText": true,
+                        "alphanumeric": true,
+                        "autoHideResults": false,
+                        "delay": 0,
+                        "hideDelay": 0,
+                        "length": 16,
+                        "deepDomScan": false,
+                        "popupNestingMaxDepth": 0,
+                        "enablePopupSearch": false,
+                        "enableOnPopupExpressions": false,
+                        "enableOnSearchPage": true,
+                        "enableSearchTags": false,
+                        "layoutAwareScan": true,
+                        "matchTypePrefix": false,
+                        "hidePopupOnCursorExit": false,
+                        "hidePopupOnCursorExitDelay": 0,
+                        "normalizeCssZoom": true,
+                        "scanWithoutMousemove": true,
+                        "scanResolution": "word"
+                    },
+                    "translation": {
+                        "textReplacements": {
+                            "searchOriginal": true,
+                            "groups": [
+                                [
+                                    {
+                                        "pattern": "l'",
+                                        "ignoreCase": true,
+                                        "replacement": ""
+                                    },
+                                    {
+                                        "pattern": "j'",
+                                        "ignoreCase": true,
+                                        "replacement": ""
+                                    },
+                                    {
+                                        "pattern": "d'",
+                                        "ignoreCase": true,
+                                        "replacement": ""
+                                    }
+                                ]
+                            ]
+                        },
+                        "searchResolution": "word"
+                    },
+                    "dictionaries": [
+                        {
+                            "name": "apple-en-ja-ipa",
+                            "alias": "apple-en-ja-ipa",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "kty-en-ja",
+                            "alias": "kty-en-ja",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": "\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}"
+                        },
+                        {
+                            "name": "Vicon Eng to Jp",
+                            "alias": "Vicon Eng to Jp",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "kty-fr-en",
+                            "alias": "kty-fr-en",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ".tag[data-details='masculine'] .tag-label{background-color: #4d82e8;}\n.tag[data-details='feminine'] .tag-label{background-color: #ca4d93;}\n.tag[data-details='neuter'] .tag-label{background-color: #40ac65;}\n\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
+                        },
+                        {
+                            "name": "kty-fr-ja",
+                            "alias": "kty-fr-ja",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": "\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
+                        },
+                        {
+                            "name": "Vicon Fre to Eng",
+                            "alias": "Vicon Fre to Eng",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        }
+                    ],
+                    "parsing": {
+                        "enableScanningParser": false,
+                        "enableMecabParser": false,
+                        "selectedParser": "scan",
+                        "termSpacing": true,
+                        "readingMode": "hiragana"
+                    },
+                    "anki": {
+                        "enable": true,
+                        "server": "http://127.0.0.1:8765",
+                        "tags": [
+                            "yomitan"
+                        ],
+                        "screenshot": {
+                            "format": "png",
+                            "quality": 92
+                        },
+                        "terms": {
+                            "deck": "A::french sentence mining",
+                            "model": "sentence mining",
+                            "fields": {
+                                "word": "{expression}",
+                                "word audio": "{audio}",
+                                "image": "",
+                                "sentence": "{sentence}",
+                                "sentence audio": "",
+                                "definition": "{glossary-brief}",
+                                "ts": "",
+                                "definiton2": ""
+                            }
+                        },
+                        "kanji": {
+                            "deck": "",
+                            "model": "",
+                            "fields": {}
+                        },
+                        "duplicateScope": "collection",
+                        "duplicateScopeCheckAllModels": false,
+                        "checkForDuplicates": true,
+                        "fieldTemplates": null,
+                        "suspendNewCards": false,
+                        "displayTagsAndFlags": "never",
+                        "noteGuiMode": "browse",
+                        "apiKey": "",
+                        "downloadTimeout": 0
+                    },
+                    "sentenceParsing": {
+                        "scanExtent": 200,
+                        "terminationCharacterMode": "custom",
+                        "terminationCharacters": [
+                            {
+                                "enabled": true,
+                                "character1": "「",
+                                "character2": "」",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "『",
+                                "character2": "』",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "\"",
+                                "character2": "\"",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "'",
+                                "character2": "'",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": ".",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "!",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "?",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "．",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "。",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "！",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "？",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "…",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︒",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︕",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︖",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︙",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            }
+                        ]
+                    },
+                    "inputs": {
+                        "hotkeys": [
+                            {
+                                "action": "close",
+                                "argument": "",
+                                "key": "Tab",
+                                "modifiers": [],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "focusSearchBox",
+                                "argument": "",
+                                "key": "Escape",
+                                "modifiers": [],
+                                "scopes": [
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "previousEntry",
+                                "argument": "3",
+                                "key": "PageUp",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "nextEntry",
+                                "argument": "3",
+                                "key": "PageDown",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "lastEntry",
+                                "argument": "",
+                                "key": "End",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "firstEntry",
+                                "argument": "",
+                                "key": "Home",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "previousEntry",
+                                "argument": "1",
+                                "key": "ArrowUp",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "nextEntry",
+                                "argument": "1",
+                                "key": "ArrowDown",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "historyBackward",
+                                "argument": "",
+                                "key": "KeyB",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "historyForward",
+                                "argument": "",
+                                "key": "KeyF",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "profilePrevious",
+                                "argument": "",
+                                "key": "Minus",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "profileNext",
+                                "argument": "",
+                                "key": "Equal",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "addNoteKanji",
+                                "argument": "",
+                                "key": "KeyK",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "addNoteTermKanji",
+                                "argument": "",
+                                "key": "KeyE",
+                                "modifiers": [
+                                    "ctrl"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "addNoteTermKana",
+                                "argument": "",
+                                "key": "KeyR",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "playAudio",
+                                "argument": "",
+                                "key": "KeyP",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "viewNotes",
+                                "argument": "",
+                                "key": "KeyZ",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "copyHostSelection",
+                                "argument": "",
+                                "key": "KeyC",
+                                "modifiers": [
+                                    "ctrl"
+                                ],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true
+                            }
+                        ]
+                    },
+                    "clipboard": {
+                        "enableBackgroundMonitor": false,
+                        "enableSearchPageMonitor": false,
+                        "autoSearchContent": true,
+                        "maximumSearchLength": 1000
+                    },
+                    "accessibility": {
+                        "forceGoogleDocsHtmlRendering": false
+                    }
+                },
+                "id": "a7fdad68692e0da78bd21fabddaf105a"
             }
         ],
-        "profileCurrent": 0,
+        "profileCurrent": 2,
         "global": {
             "database": {
                 "prefixWildcardsSupported": false
