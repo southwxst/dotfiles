@@ -19,17 +19,17 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id copyq
 exec --no-startup-id picom -b
 #exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
-exec ghostty
+#exec kitty
 exec anki
 #exec --no-startup-id spotifyd --no-daemon
 exec --no-startup-id fcitx5
 # Google翻訳を開くショートカット
-bindsym $mod+Shift+g exec --no-startup-id brave https://translate.google.com
+bindsym $mod+Shift+g exec --no-startup-id LANG=fr_FR brave https://translate.google.com
 # ChatGPTを開くショートカット
-bindsym $mod+g exec --no-startup-id brave https://chat.openai.com
-exec brave
+bindsym $mod+g exec --no-startup-id LANG=fr_FR brave https://chat.openai.com
+exec LANG=fr_FR brave
 #exec --no-startup-id flameshot
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
 gaps inner 7
 gaps outer 1
 #exec --no-startup-id spotify-launcher
@@ -62,7 +62,7 @@ bindsym $mod+F1 exec --no-startup-idpactl set-sink-mute @DEFAULT_SINK@ toggle
 
 bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 focus_follows_mouse no
-bindsym $mod+w exec brave
+bindsym $mod+w exec LANG=fr_FR brave
 # Font for window tlitles. Will also be used by the bar unless a different font
 
 # is used in the bar {} block below.
@@ -106,7 +106,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec ghostty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
