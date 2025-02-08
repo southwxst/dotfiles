@@ -1,0 +1,16 @@
+<style>
+/* Matches --dark-mode-bg-rgb which tabs seem to clear to by default; any
+   other color causes a flash between first tab paint and NTP extension load
+   See chrome/browser/resources/local_ntp/local_ntp_common.css */
+@media(prefers-color-scheme:dark){body{background-color:rgb(50,54,57);}}
+</style>
+<!--
+Chrome insists on putting "chrome://newtab" as title if there's no title,
+instead of putting something useful like a localized "New Tab" there.
+
+As a workaround, use a space as title. An empty tab is better than one saying
+something cryptic. Chrome puts "chrome://newtab" if the title is whitespace too,
+but it doesn't recognize all the whitespace characters listed at
+http://en.wikipedia.org/wiki/Space_(punctuation) :-)
+-->
+<title>&#65279;</title>

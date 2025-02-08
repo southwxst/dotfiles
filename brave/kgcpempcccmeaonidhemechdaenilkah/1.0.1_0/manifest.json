@@ -1,0 +1,46 @@
+{
+   "action": {
+      "default_icon": {
+         "16": "data/icons/disabled/16.png",
+         "32": "data/icons/disabled/32.png",
+         "48": "data/icons/disabled/48.png"
+      },
+      "default_title": "Click to PiP"
+   },
+   "background": {
+      "service_worker": "worker.js"
+   },
+   "commands": {
+      "_execute_action": {
+      }
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "data/plugins/youtube.css" ],
+      "js": [ "data/plugins/youtube.js" ],
+      "matches": [ "*://www.youtube.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "data/plugins/global.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_shortDesc__",
+   "homepage_url": "https://chrome-page.com/youtube-picture-in-picture",
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "data/icons/128.png",
+      "16": "data/icons/16.png",
+      "32": "data/icons/32.png",
+      "48": "data/icons/48.png",
+      "64": "data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkUmtnQfH9uCwffWbazMRu46TfgFsdZbqg4kVNngdpbJnuFFJ5f8y7475j0WDSzR01wcWuMCYZXvRwPtaGZsXhAN1mSus62XMJnz+0tiURjPWBdKUYllVRJII4+dzgyPD6d/WlFoyYLroZcqRl75T+xIyFgFUaScIEqUoKpmayJwMZf/DNR1ufL9fZ+enHgNxmOgIcRBl/Rdm/3sIoXVTrxPEnGufFGqFxUKutU/W3WNuXB34tzz4QXnk/Qhwn+7zz5OYznFc3eM5zjYSkz6wbstgZMBXhAqGP3/U2iAdJRkxbx3BKZk1UKnR5r4H246e8v+dZp/4KZGVfhjz4h4E3wIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_appName__",
+   "permissions": [ "storage", "scripting", "activeTab" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.1"
+}

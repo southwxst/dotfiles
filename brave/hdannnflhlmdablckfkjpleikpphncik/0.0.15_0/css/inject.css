@@ -1,0 +1,101 @@
+#PlayBackRatePanelYPSC {
+  color: #cfcfcf;
+  font-size: 14px;
+  z-index: 999999;
+  position: absolute;
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+
+.PlayBackRatePanelYPSC {
+  right: 2px;
+  top: 2px;
+  display: inline;
+  width: 120px;
+  height: 24px;
+}
+
+.PlayBackRatePanelYPSCFullScreen {
+  right: 60px;
+  top: 2px;
+  display: inline;
+  width: 114px;
+  height: 24px;
+}
+
+.btnYPSC {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 5px 5px 5px 5px;
+  text-decoration: none;
+  font-size: 12px;
+  border: 0px;
+}
+
+.btnYPSC-left {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.btnYPSC-right {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.btnYPSC:hover {
+  background: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.btnYPSC:focus {
+  outline: 0;
+}
+
+#SpeedDownYPSC {
+  float: right;
+  width: 24px;
+  height: 100%;
+  line-height: 20px;
+}
+
+#SpeedUpYPSC {
+  float: right;
+  width: 24px;
+  height: 100%;
+  line-height: 20px;
+}
+
+#SettingYPSC {
+  background: no-repeat center
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAArUlEQVQ4jWNgoCHIAeJVUJxLjgGngPg/FJ8iRoMCEHcCsToQuwPxFyQDQGwPqFwnVC0GWIukgRBei67ZAYuiv0B8BIr/YZF3QDZAA4hvo2n2QZL3QzPkNlQPChAA4t9QBUewePEoVO43VC0GoMgAdC/8gzobBvwJecGBATOQ/kFtPcpARCCCAEXRCAIKQNzGgDshuUPl2hhwJCR0gJyUTxKjAR0gZ6YccgwgCgAA4EFipVbnt1AAAAAASUVORK5CYII=),
+    rgba(255, 255, 255, 0.5);
+  float: right;
+  vertical-align: middle;
+  text-align: center;
+  width: 24px;
+  height: 100%;
+  line-height: 20px;
+  border: thin solid rgba(255, 255, 255, 0.5);
+  padding: 0px;
+}
+
+#PlayBackRateYPSC {
+  float: right;
+  color: #ffffff;
+  vertical-align: middle;
+  text-align: center;
+  width: 40px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  line-height: 20px;
+  border-bottom: thin solid rgba(255, 255, 255, 0.5);
+  border-top: thin solid rgba(255, 255, 255, 0.5);
+  padding: 0px;
+}
