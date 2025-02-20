@@ -18,8 +18,8 @@ set $mod Mod4
 #exec --no-startup-id redshift -O 2800
 exec --no-startup-id lxpolkit
 exec --no-startup-id copyq
-exec --no-startup-id picom -b
-#exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
+#exec --no-startup-id picom -b
+exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
 #exec kitty
 exec anki
 #exec --no-startup-id spotifyd --no-daemon
@@ -31,8 +31,8 @@ bindsym $mod+a exec --no-startup-id anki
 bindsym $mod+g exec --no-startup-id brave https://chat.openai.com
 exec  brave
 #exec --no-startup-id flameshot
-exec --no-startup-id nitrogen --restore
-gaps inner 20 
+#exec --no-startup-id nitrogen --restore
+#gaps inner 20 
 #gaps outer 2 
 #exec --no-startup-id spotify-launcher
 for_window [class="^.*"] border pixel 2
@@ -93,7 +93,7 @@ exec --no-startup-id dex --autostart --environment i3:wq
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 bindsym $mod+p exec --no-startup-id ~/dotfiles/hdmi.sh
-bindsym $mod+v exec --no-startup-id xrandr --auto && xrandr --output HDMI-A-0 --off  %% nitrogen --restore 
+bindsym $mod+v exec --no-startup-id xrandr --auto && xrandr --output HDMI-A-0 --off  && nitrogen --restore 
 #exec --no-startup-id polybar 
 
 # Use pactl to adjust volume in PulseAudio.
@@ -215,8 +215,8 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-bindsym $mod+n exec --no-startup-id brightnessctl s +5%
-bindsym $mod+m exec --no-startup-id brightnessctl s 3%-
+bindsym $mod+n exec --no-startup-id brightnessctl s +10%
+bindsym $mod+m exec --no-startup-id brightnessctl s 10%-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
