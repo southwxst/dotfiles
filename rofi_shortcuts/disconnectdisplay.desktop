@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name= disconnect hdmi
+Comment=Run my custom script
+Exec=~/dotfiles/disconnecthdmi.sh
+Icon=utilities-terminal
+Terminal=true
+Type=Application
+Categories=Utility;

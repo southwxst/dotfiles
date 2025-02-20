@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=connect display
+Comment=Run my hdmi script
+Exec=~/dotfiles/hdmi.sh
+Icon=utilities-terminal
+Terminal=true
+Type=Application
+Categories=Utility;

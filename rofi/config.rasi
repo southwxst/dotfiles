@@ -1,0 +1,13 @@
+
+//@theme "/usr/share/rofi/themes/dmenu.rasi"
+
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+//@theme "/usr/share/rofi/themes/dmenu.rasi"
+
+@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+configuration {
+    font: "JetBrainsMonoNFM-Regular 12";
+}
+

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=ChatGPT
+Exec=xdg-open "https://chat.openai.com"
+Icon=web-browser
+Type=Application
+Categories=Internet;
+

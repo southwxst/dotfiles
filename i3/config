@@ -9,8 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
+exec --no-startup-id i3-battery-popup
 
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show drun 
 bindsym $mod+Shift+a exec --no-startup-id rofi -show run 
 #bindsym $mod+d exec --no-startup-id dmenu_run
 set $mod Mod4
@@ -24,14 +25,15 @@ exec anki
 #exec --no-startup-id spotifyd --no-daemon
 exec --no-startup-id fcitx5
 # Google翻訳を開くショートカット
-bindsym $mod+Shift+g exec --no-startup-id LANG=fr_FR brave https://translate.google.com
+bindsym $mod+Shift+g exec --no-startup-id brave https://translate.google.com
+bindsym $mod+a exec --no-startup-id anki  
 # ChatGPTを開くショートカット
-bindsym $mod+g exec --no-startup-id LANG=fr_FR brave https://chat.openai.com
-exec LANG=fr_FR brave
+bindsym $mod+g exec --no-startup-id brave https://chat.openai.com
+exec  brave
 #exec --no-startup-id flameshot
-#exec --no-startup-id nitrogen --restore
-gaps inner 7
-gaps outer 1
+exec --no-startup-id nitrogen --restore
+gaps inner 20 
+#gaps outer 2 
 #exec --no-startup-id spotify-launcher
 for_window [class="^.*"] border pixel 2
 #settings for copyq
@@ -62,7 +64,7 @@ bindsym $mod+F1 exec --no-startup-idpactl set-sink-mute @DEFAULT_SINK@ toggle
 
 bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 focus_follows_mouse no
-bindsym $mod+w exec LANG=fr_FR brave
+bindsym $mod+w exec brave
 # Font for window tlitles. Will also be used by the bar unless a different font
 
 # is used in the bar {} block below.
@@ -90,6 +92,9 @@ exec --no-startup-id dex --autostart --environment i3:wq
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+bindsym $mod+p exec --no-startup-id ~/dotfiles/hdmi.sh
+bindsym $mod+v exec --no-startup-id xrandr --auto && xrandr --output HDMI-A-0 --off  %% nitrogen --restore 
+#exec --no-startup-id polybar 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -169,7 +174,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
