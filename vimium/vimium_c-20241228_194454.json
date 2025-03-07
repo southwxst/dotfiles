@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "1/12/2025, 3:48:58 PM",
-	"time": 1736664538784,
+	"@time": "2/24/2025, 10:59:05 AM",
+	"time": 1740362345987,
 	"environment": {
 		"extension": "2.11.3",
 		"platform": "linux",
-		"chromium": 131
+		"chromium": 132
 	},
 	"exclusionRules": [
 		{
@@ -27,6 +27,26 @@
 		{
 			"passKeys": "",
 			"pattern": ":https://sushida.net/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://typingx0\\.net/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://typingx0\\.net/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://monkeytype.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://type.sam.today/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://type.sam.today/"
 		}
 	],
 	"keyLayout": 2,

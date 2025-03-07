@@ -21,7 +21,6 @@ return {
           },
         },
       })
-      -- Keymap to toggle NvimTree
       vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
       vim.api.nvim_set_keymap("n", "<leader>a", ":NvimTreeOpen<CR>", { noremap = true, silent = true })
     end,

@@ -9,10 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
-exec --no-startup-id i3-battery-popup
+exec --no-startup-id i3-battery-popup -n -D -L 20 -I 2
+exec env LC_NUMERIC=C i3status
 
 bindsym $mod+d exec --no-startup-id rofi -show drun 
-bindsym $mod+Shift+a exec --no-startup-id rofi -show run 
+bindsym $mod+Shift+a exec --no-startup-id  rofi -show calc -modi calc -no-show-match -no-sort
 #bindsym $mod+d exec --no-startup-id dmenu_run
 set $mod Mod4
 #exec --no-startup-id redshift -O 2800
@@ -20,7 +21,7 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id copyq
 #exec --no-startup-id picom -b
 exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 &
-#exec kitty
+#exec ghostty
 exec anki
 #exec --no-startup-id spotifyd --no-daemon
 exec --no-startup-id fcitx5
@@ -31,8 +32,8 @@ bindsym $mod+a exec --no-startup-id anki
 bindsym $mod+g exec --no-startup-id brave https://chat.openai.com
 exec  brave
 #exec --no-startup-id flameshot
-#exec --no-startup-id nitrogen --restore
-#gaps inner 20 
+exec --no-startup-id nitrogen --restore
+gaps inner 7 
 #gaps outer 2 
 #exec --no-startup-id spotify-launcher
 for_window [class="^.*"] border pixel 2
@@ -61,6 +62,8 @@ bindsym $mod+F1 exec --no-startup-idpactl set-sink-mute @DEFAULT_SINK@ toggle
 
 
 
+set $lock i3lock -i /path/to/image
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $lock --nofork
 
 bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 focus_follows_mouse no
@@ -93,7 +96,7 @@ exec --no-startup-id dex --autostart --environment i3:wq
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 bindsym $mod+p exec --no-startup-id ~/dotfiles/hdmi.sh
-bindsym $mod+v exec --no-startup-id xrandr --auto && xrandr --output HDMI-A-0 --off  && nitrogen --restore 
+bindsym $mod+v exec --no-startup-id xrandr --auto && xrandr --output HDMI-A-0 --off && nitrogen --restore 
 #exec --no-startup-id polybar 
 
 # Use pactl to adjust volume in PulseAudio.
@@ -111,7 +114,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+q kill
@@ -252,11 +255,12 @@ mode "resize" {
 }
 #exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 bindsym $mod+r mode "resize"
+client.focused         #0096FF #0096FF      #0096FF  #0096FF    #0096FF
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-#      position top
-        status_command i3status
+status_command i3status
 }
+
 

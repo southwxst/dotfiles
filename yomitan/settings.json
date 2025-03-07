@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "date": "2025-01-27 16:06:21",
+    "date": "2025-02-24 01:49:33",
     "url": "chrome-extension://likgccmbimhjbgkjambclfkhldnlhbnn/",
     "manifest": {
         "action": {
@@ -66,6 +66,7 @@
             "sandbox": "sandbox allow-scripts; default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'unsafe-inline'"
         },
         "description": "Popup dictionary for language learning",
+        "differential_fingerprint": "1.3382adec3854ac569683659c8e5e47399b3f99990bad7d7276f3c6baf1827876",
         "host_permissions": [
             "<all_urls>"
         ],
@@ -105,7 +106,7 @@
             ]
         },
         "update_url": "https://clients2.google.com/service/update2/crx",
-        "version": "25.1.5.0",
+        "version": "25.2.10.0",
         "web_accessible_resources": [
             {
                 "matches": [
@@ -123,10 +124,10 @@
     "environment": {
         "browser": "chrome",
         "platform": {
-            "os": "win"
+            "os": "linux"
         }
     },
-    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
     "permissions": {
         "origins": [
             "<all_urls>",
@@ -145,7 +146,7 @@
         ]
     },
     "options": {
-        "version": 56,
+        "version": 57,
         "profiles": [
             {
                 "name": "Default",
@@ -240,7 +241,8 @@
                                     "scanOnPenPress": true,
                                     "scanOnPenRelease": false,
                                     "preventTouchScrolling": false,
-                                    "preventPenScrolling": false
+                                    "preventPenScrolling": false,
+                                    "minimumTouchTime": 0
                                 }
                             },
                             {
@@ -265,7 +267,8 @@
                                     "scanOnPenPress": true,
                                     "scanOnPenRelease": false,
                                     "preventTouchScrolling": true,
-                                    "preventPenScrolling": true
+                                    "preventPenScrolling": true,
+                                    "minimumTouchTime": 0
                                 }
                             }
                         ],
@@ -293,26 +296,34 @@
                         "hidePopupOnCursorExitDelay": 0,
                         "normalizeCssZoom": true,
                         "scanWithoutMousemove": true,
-                        "scanResolution": "character"
+                        "scanResolution": "word"
                     },
                     "translation": {
                         "textReplacements": {
                             "searchOriginal": true,
-                            "groups": []
+                            "groups": [
+                                [
+                                    {
+                                        "pattern": "l'",
+                                        "ignoreCase": true,
+                                        "replacement": ""
+                                    },
+                                    {
+                                        "pattern": "j'",
+                                        "ignoreCase": true,
+                                        "replacement": ""
+                                    },
+                                    {
+                                        "pattern": "d'",
+                                        "ignoreCase": true,
+                                        "replacement": ""
+                                    }
+                                ]
+                            ]
                         },
-                        "searchResolution": "letter"
+                        "searchResolution": "word"
                     },
                     "dictionaries": [
-                        {
-                            "name": "apple-en-ja-ipa",
-                            "alias": "apple-en-ja-ipa",
-                            "enabled": true,
-                            "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible",
-                            "partsOfSpeechFilter": true,
-                            "useDeinflections": true,
-                            "styles": ""
-                        },
                         {
                             "name": "kty-en-ja",
                             "alias": "kty-en-ja",
@@ -322,6 +333,16 @@
                             "partsOfSpeechFilter": true,
                             "useDeinflections": true,
                             "styles": "\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}"
+                        },
+                        {
+                            "name": "apple-en-ja-ipa",
+                            "alias": "apple-en-ja-ipa",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
                         },
                         {
                             "name": "Vicon Eng to Jp",
@@ -362,10 +383,40 @@
                             "partsOfSpeechFilter": true,
                             "useDeinflections": true,
                             "styles": ""
+                        },
+                        {
+                            "name": "apple-fr-en",
+                            "alias": "apple-fr-en",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "KRDICT EN",
+                            "alias": "KRDICT EN",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "KRDICT EN Hanja",
+                            "alias": "KRDICT EN Hanja",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
                         }
                     ],
                     "parsing": {
-                        "enableScanningParser": true,
+                        "enableScanningParser": false,
                         "enableMecabParser": false,
                         "selectedParser": "scan",
                         "termSpacing": true,
@@ -865,7 +916,8 @@
                                     "scanOnPenPress": true,
                                     "scanOnPenRelease": false,
                                     "preventTouchScrolling": false,
-                                    "preventPenScrolling": false
+                                    "preventPenScrolling": false,
+                                    "minimumTouchTime": 0
                                 }
                             },
                             {
@@ -890,7 +942,8 @@
                                     "scanOnPenPress": true,
                                     "scanOnPenRelease": false,
                                     "preventTouchScrolling": true,
-                                    "preventPenScrolling": true
+                                    "preventPenScrolling": true,
+                                    "minimumTouchTime": 0
                                 }
                             }
                         ],
@@ -949,16 +1002,6 @@
                             "styles": "\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}"
                         },
                         {
-                            "name": "Vicon Eng to Jp",
-                            "alias": "Vicon Eng to Jp",
-                            "enabled": true,
-                            "allowSecondarySearches": false,
-                            "definitionsCollapsible": "not-collapsible",
-                            "partsOfSpeechFilter": true,
-                            "useDeinflections": true,
-                            "styles": ""
-                        },
-                        {
                             "name": "kty-fr-en",
                             "alias": "kty-fr-en",
                             "enabled": false,
@@ -979,8 +1022,48 @@
                             "styles": "\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
                         },
                         {
+                            "name": "Vicon Eng to Jp",
+                            "alias": "Vicon Eng to Jp",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
                             "name": "Vicon Fre to Eng",
                             "alias": "Vicon Fre to Eng",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "apple-fr-en",
+                            "alias": "apple-fr-en",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "KRDICT EN",
+                            "alias": "KRDICT EN",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "KRDICT EN Hanja",
+                            "alias": "KRDICT EN Hanja",
                             "enabled": false,
                             "allowSecondarySearches": false,
                             "definitionsCollapsible": "not-collapsible",
@@ -1007,7 +1090,7 @@
                             "quality": 92
                         },
                         "terms": {
-                            "deck": "EN",
+                            "deck": "A::EN",
                             "model": "sentence mining",
                             "fields": {
                                 "word": "{expression}",
@@ -1491,7 +1574,8 @@
                                     "scanOnPenPress": true,
                                     "scanOnPenRelease": false,
                                     "preventTouchScrolling": false,
-                                    "preventPenScrolling": false
+                                    "preventPenScrolling": false,
+                                    "minimumTouchTime": 0
                                 }
                             },
                             {
@@ -1516,7 +1600,8 @@
                                     "scanOnPenPress": true,
                                     "scanOnPenRelease": false,
                                     "preventTouchScrolling": true,
-                                    "preventPenScrolling": true
+                                    "preventPenScrolling": true,
+                                    "minimumTouchTime": 0
                                 }
                             }
                         ],
@@ -1593,9 +1678,19 @@
                             "styles": "\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}"
                         },
                         {
-                            "name": "Vicon Eng to Jp",
-                            "alias": "Vicon Eng to Jp",
-                            "enabled": false,
+                            "name": "apple-fr-en",
+                            "alias": "apple-fr-en",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "Vicon Fre to Eng",
+                            "alias": "Vicon Fre to Eng",
+                            "enabled": true,
                             "allowSecondarySearches": false,
                             "definitionsCollapsible": "not-collapsible",
                             "partsOfSpeechFilter": true,
@@ -1623,9 +1718,29 @@
                             "styles": "\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
                         },
                         {
-                            "name": "Vicon Fre to Eng",
-                            "alias": "Vicon Fre to Eng",
-                            "enabled": true,
+                            "name": "Vicon Eng to Jp",
+                            "alias": "Vicon Eng to Jp",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "KRDICT EN",
+                            "alias": "KRDICT EN",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "KRDICT EN Hanja",
+                            "alias": "KRDICT EN Hanja",
+                            "enabled": false,
                             "allowSecondarySearches": false,
                             "definitionsCollapsible": "not-collapsible",
                             "partsOfSpeechFilter": true,
@@ -1651,7 +1766,7 @@
                             "quality": 92
                         },
                         "terms": {
-                            "deck": "A::french sentence mining",
+                            "deck": "A::sentence mining",
                             "model": "sentence mining",
                             "fields": {
                                 "word": "{expression}",
@@ -2041,9 +2156,685 @@
                     }
                 },
                 "id": "a7fdad68692e0da78bd21fabddaf105a"
+            },
+            {
+                "name": "korean",
+                "conditionGroups": [],
+                "options": {
+                    "general": {
+                        "enable": true,
+                        "language": "ko",
+                        "resultOutputMode": "group",
+                        "debugInfo": false,
+                        "maxResults": 32,
+                        "showAdvanced": true,
+                        "showDebug": false,
+                        "popupDisplayMode": "default",
+                        "popupWidth": 400,
+                        "popupHeight": 250,
+                        "popupHorizontalOffset": 0,
+                        "popupVerticalOffset": 10,
+                        "popupHorizontalOffset2": 10,
+                        "popupVerticalOffset2": 0,
+                        "popupHorizontalTextPosition": "below",
+                        "popupVerticalTextPosition": "before",
+                        "popupScalingFactor": 0.9,
+                        "popupScaleRelativeToPageZoom": false,
+                        "popupScaleRelativeToVisualViewport": true,
+                        "showGuide": false,
+                        "enableContextMenuScanSelected": true,
+                        "compactTags": false,
+                        "glossaryLayoutMode": "default",
+                        "mainDictionary": "apple-en-ja-ipa",
+                        "popupTheme": "dark",
+                        "popupOuterTheme": "none",
+                        "customPopupCss": ":root[data-theme=\"dark\"] {\n    --background-color: #282828;\n    --text-color: #fbf1c7;\n    --tag-frequency-background-color: #67679A;\n    --tag-part-of-speech-background-color: #67679A;\n    --reason-text-color: #808080;\n    --notification-text-color: #FFFFFF;\n    --notification-background-color: #3B4252;\n    --sidebar-background-color: #262733;\n    --sidebar-button-background-color-hover: #644EA7;\n    --sidebar-button-danger-background-color-hover: #BF616A;\n    --sidebar-button-icon-color: #A89BD0;\n    --accent-color: #67679A;\n    --dict-color: #9057AD;\n    --dict-text-color: #FFFFFF;\n}\n\n",
+                        "customPopupOuterCss": "",
+                        "enableWanakana": true,
+                        "showPitchAccentDownstepNotation": true,
+                        "showPitchAccentPositionNotation": true,
+                        "showPitchAccentGraph": false,
+                        "showIframePopupsInRootFrame": true,
+                        "useSecurePopupFrameUrl": true,
+                        "usePopupShadowDom": true,
+                        "usePopupWindow": false,
+                        "popupCurrentIndicatorMode": "triangle",
+                        "popupActionBarVisibility": "auto",
+                        "popupActionBarLocation": "top",
+                        "frequencyDisplayMode": "split-tags-grouped",
+                        "termDisplayMode": "ruby",
+                        "sortFrequencyDictionary": null,
+                        "sortFrequencyDictionaryOrder": "descending",
+                        "stickySearchHeader": false,
+                        "fontFamily": "",
+                        "fontSize": 14,
+                        "lineHeight": "1.5"
+                    },
+                    "popupWindow": {
+                        "width": 400,
+                        "height": 250,
+                        "left": 0,
+                        "top": 0,
+                        "useLeft": false,
+                        "useTop": false,
+                        "windowType": "popup",
+                        "windowState": "normal"
+                    },
+                    "audio": {
+                        "enabled": true,
+                        "volume": 100,
+                        "autoPlay": false,
+                        "sources": []
+                    },
+                    "scanning": {
+                        "inputs": [
+                            {
+                                "include": "shift",
+                                "exclude": "mouse0",
+                                "types": {
+                                    "mouse": true,
+                                    "touch": false,
+                                    "pen": false
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchTap": true,
+                                    "scanOnTouchMove": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": false,
+                                    "preventPenScrolling": false,
+                                    "minimumTouchTime": 0
+                                }
+                            },
+                            {
+                                "include": "",
+                                "exclude": "",
+                                "types": {
+                                    "mouse": false,
+                                    "touch": true,
+                                    "pen": true
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchTap": true,
+                                    "scanOnTouchMove": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": true,
+                                    "preventPenScrolling": true,
+                                    "minimumTouchTime": 0
+                                }
+                            }
+                        ],
+                        "preventMiddleMouse": {
+                            "onWebPages": false,
+                            "onPopupPages": false,
+                            "onSearchPages": false,
+                            "onSearchQuery": false
+                        },
+                        "selectText": true,
+                        "alphanumeric": true,
+                        "autoHideResults": false,
+                        "delay": 0,
+                        "hideDelay": 0,
+                        "length": 16,
+                        "deepDomScan": false,
+                        "popupNestingMaxDepth": 0,
+                        "enablePopupSearch": false,
+                        "enableOnPopupExpressions": false,
+                        "enableOnSearchPage": true,
+                        "enableSearchTags": false,
+                        "layoutAwareScan": true,
+                        "matchTypePrefix": false,
+                        "hidePopupOnCursorExit": false,
+                        "hidePopupOnCursorExitDelay": 0,
+                        "normalizeCssZoom": true,
+                        "scanWithoutMousemove": true,
+                        "scanResolution": "word"
+                    },
+                    "translation": {
+                        "textReplacements": {
+                            "searchOriginal": true,
+                            "groups": [
+                                [
+                                    {
+                                        "pattern": "l'",
+                                        "ignoreCase": true,
+                                        "replacement": ""
+                                    },
+                                    {
+                                        "pattern": "j'",
+                                        "ignoreCase": true,
+                                        "replacement": ""
+                                    },
+                                    {
+                                        "pattern": "d'",
+                                        "ignoreCase": true,
+                                        "replacement": ""
+                                    }
+                                ]
+                            ]
+                        },
+                        "searchResolution": "word"
+                    },
+                    "dictionaries": [
+                        {
+                            "name": "apple-en-ja-ipa",
+                            "alias": "apple-en-ja-ipa",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "kty-en-ja",
+                            "alias": "kty-en-ja",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": "\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}"
+                        },
+                        {
+                            "name": "kty-fr-en",
+                            "alias": "kty-fr-en",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ".tag[data-details='masculine'] .tag-label{background-color: #4d82e8;}\n.tag[data-details='feminine'] .tag-label{background-color: #ca4d93;}\n.tag[data-details='neuter'] .tag-label{background-color: #40ac65;}\n\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
+                        },
+                        {
+                            "name": "kty-fr-ja",
+                            "alias": "kty-fr-ja",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": "\ndiv[data-sc-content=\"tags\"] span {\n    font-size: 0.8em;\n    font-weight: bold;\n    padding: 0.2em 0.3em;\n    word-break: keep-all;\n    border-radius: 0.3em;\n    vertical-align: text-bottom;\n    background-color: #565656;\n    color: white;\n    cursor: help;\n    margin-right: 0.25em;\n}\ndiv[data-sc-content=\"extra-info\"] {\n    margin-left: 0.5em;\n}\ndiv[data-sc-content=\"example-sentence\"] {\n    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 5%, transparent);\n    border-color: var(--text-color, var(--fg, #333));\n    border-style: none none none solid;\n    border-radius: 0.4rem;\n    border-width: calc(3em / var(--font-size-no-units, 14));\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n    padding: 0.1rem 0.5rem;\n}\ndiv[data-sc-content=\"example-sentence-a\"] {\n    font-size: 1.1em;\n    font-style: italic;\n}\ndiv[data-sc-content=\"example-sentence-b\"] {\n    font-size: 0.8em;\n}\ndetails[data-sc-content^=\"details-entry\"] {\n    padding-left: 0;\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    user-select: none;\n    width: max-content;\n    padding: 0.1em 0.2em;\n}\nol[data-sc-content=\"glosses\"] {\n    list-style-type: upper-roman;\n}\n[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--checkbox-disabled-color);\n}\nsummary[data-sc-content=\"summary-entry\"] {\n    list-style-position: inside;\n    color: var(--text-color-light4);\n}\ndetails[data-sc-content^=\"details-entry-Grammar\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Etymology\"] summary[data-sc-content=\"summary-entry\"],\ndetails[data-sc-content^=\"details-entry-Morphemes\"] summary[data-sc-content=\"summary-entry\"] {\n    font-weight: bold;\n}\n\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"] {\n    color: var(--text-color);\n}\ndetails[data-sc-content^=\"details-entry\"][open=\"\"] summary[data-sc-content=\"summary-entry\"]::marker {\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"]:hover {\n    border-radius: 0.4em;\n    background-color: var(--notification-background-color-lighter);\n    cursor: pointer;\n    color: var(--text-color);\n}\nsummary[data-sc-content=\"summary-entry\"] ~ div {\n    margin: 0.5em 0;\n}"
+                        },
+                        {
+                            "name": "Vicon Eng to Jp",
+                            "alias": "Vicon Eng to Jp",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "Vicon Fre to Eng",
+                            "alias": "Vicon Fre to Eng",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "apple-fr-en",
+                            "alias": "apple-fr-en",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "KRDICT EN",
+                            "alias": "KRDICT EN",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "KRDICT EN Hanja",
+                            "alias": "KRDICT EN Hanja",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        }
+                    ],
+                    "parsing": {
+                        "enableScanningParser": false,
+                        "enableMecabParser": false,
+                        "selectedParser": "scan",
+                        "termSpacing": true,
+                        "readingMode": "hiragana"
+                    },
+                    "anki": {
+                        "enable": true,
+                        "server": "http://127.0.0.1:8765",
+                        "tags": [
+                            "yomitan"
+                        ],
+                        "screenshot": {
+                            "format": "png",
+                            "quality": 92
+                        },
+                        "terms": {
+                            "deck": "A::KR",
+                            "model": "sentence mining",
+                            "fields": {
+                                "word": "{expression}",
+                                "word audio": "{audio}",
+                                "image": "",
+                                "sentence": "{sentence}",
+                                "sentence audio": "",
+                                "definition": "{glossary-brief}",
+                                "ts": "",
+                                "definiton2": ""
+                            }
+                        },
+                        "kanji": {
+                            "deck": "",
+                            "model": "",
+                            "fields": {}
+                        },
+                        "duplicateScope": "collection",
+                        "duplicateScopeCheckAllModels": false,
+                        "checkForDuplicates": true,
+                        "fieldTemplates": null,
+                        "suspendNewCards": false,
+                        "displayTagsAndFlags": "never",
+                        "noteGuiMode": "browse",
+                        "apiKey": "",
+                        "downloadTimeout": 0
+                    },
+                    "sentenceParsing": {
+                        "scanExtent": 200,
+                        "terminationCharacterMode": "custom",
+                        "terminationCharacters": [
+                            {
+                                "enabled": true,
+                                "character1": "「",
+                                "character2": "」",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "『",
+                                "character2": "』",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "\"",
+                                "character2": "\"",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "'",
+                                "character2": "'",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": ".",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "!",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "?",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "．",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "。",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "！",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "？",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "…",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︒",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︕",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︖",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︙",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            }
+                        ]
+                    },
+                    "inputs": {
+                        "hotkeys": [
+                            {
+                                "action": "close",
+                                "argument": "",
+                                "key": "Tab",
+                                "modifiers": [],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "focusSearchBox",
+                                "argument": "",
+                                "key": "Escape",
+                                "modifiers": [],
+                                "scopes": [
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "previousEntry",
+                                "argument": "3",
+                                "key": "PageUp",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "nextEntry",
+                                "argument": "3",
+                                "key": "PageDown",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "lastEntry",
+                                "argument": "",
+                                "key": "End",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "firstEntry",
+                                "argument": "",
+                                "key": "Home",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "previousEntry",
+                                "argument": "1",
+                                "key": "ArrowUp",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "nextEntry",
+                                "argument": "1",
+                                "key": "ArrowDown",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "historyBackward",
+                                "argument": "",
+                                "key": "KeyB",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "historyForward",
+                                "argument": "",
+                                "key": "KeyF",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "profilePrevious",
+                                "argument": "",
+                                "key": "Minus",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "profileNext",
+                                "argument": "",
+                                "key": "Equal",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "addNoteKanji",
+                                "argument": "",
+                                "key": "KeyK",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "addNoteTermKanji",
+                                "argument": "",
+                                "key": "KeyE",
+                                "modifiers": [
+                                    "ctrl"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "addNoteTermKana",
+                                "argument": "",
+                                "key": "KeyR",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "playAudio",
+                                "argument": "",
+                                "key": "KeyP",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "viewNotes",
+                                "argument": "",
+                                "key": "KeyZ",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true
+                            },
+                            {
+                                "action": "copyHostSelection",
+                                "argument": "",
+                                "key": "KeyC",
+                                "modifiers": [
+                                    "ctrl"
+                                ],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true
+                            }
+                        ]
+                    },
+                    "clipboard": {
+                        "enableBackgroundMonitor": false,
+                        "enableSearchPageMonitor": false,
+                        "autoSearchContent": true,
+                        "maximumSearchLength": 1000
+                    },
+                    "accessibility": {
+                        "forceGoogleDocsHtmlRendering": false
+                    }
+                },
+                "id": "decc5b58929f2f7360d110665fb174a8"
             }
         ],
-        "profileCurrent": 2,
+        "profileCurrent": 0,
         "global": {
             "database": {
                 "prefixWildcardsSupported": false

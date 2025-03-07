@@ -1,10 +1,17 @@
 return {
   {
+    "ellisonleao/glow.nvim",
+    cmd = "Glow",
+    config = true,
+  },
+  {
     "MeanderingProgrammer/render-markdown.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ---@module 'render-markdown'
-    opts = {},
+    config = function()
+      require("render-markdown").setup({
+        -- You can add your configurations here
+        -- For example:
+        -- theme = "dark",
+      })
+    end,
   },
 }
