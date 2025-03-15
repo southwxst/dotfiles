@@ -1,6 +1,6 @@
 {
     "version": 0,
-    "date": "2025-02-24 01:49:33",
+    "date": "2025-03-14 10:05:12",
     "url": "chrome-extension://likgccmbimhjbgkjambclfkhldnlhbnn/",
     "manifest": {
         "action": {
@@ -66,7 +66,7 @@
             "sandbox": "sandbox allow-scripts; default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'unsafe-inline'"
         },
         "description": "Popup dictionary for language learning",
-        "differential_fingerprint": "1.3382adec3854ac569683659c8e5e47399b3f99990bad7d7276f3c6baf1827876",
+        "differential_fingerprint": "1.a546aae224d0008d15831e1be0175e118dda37c2ef455d5c3a096471d087fc8e",
         "host_permissions": [
             "<all_urls>"
         ],
@@ -83,6 +83,9 @@
         "manifest_version": 3,
         "minimum_chrome_version": "102.0.0.0",
         "name": "Yomitan Popup Dictionary",
+        "omnibox": {
+            "keyword": "yomi"
+        },
         "optional_permissions": [
             "clipboardRead",
             "nativeMessaging"
@@ -106,7 +109,7 @@
             ]
         },
         "update_url": "https://clients2.google.com/service/update2/crx",
-        "version": "25.2.10.0",
+        "version": "25.3.3.0",
         "web_accessible_resources": [
             {
                 "matches": [
@@ -146,7 +149,7 @@
         ]
     },
     "options": {
-        "version": 57,
+        "version": 62,
         "profiles": [
             {
                 "name": "Default",
@@ -199,7 +202,8 @@
                         "stickySearchHeader": false,
                         "fontFamily": "",
                         "fontSize": 14,
-                        "lineHeight": "1.5"
+                        "lineHeight": "1.5",
+                        "averageFrequency": false
                     },
                     "popupWindow": {
                         "width": 400,
@@ -215,7 +219,8 @@
                         "enabled": true,
                         "volume": 100,
                         "autoPlay": false,
-                        "sources": []
+                        "sources": [],
+                        "fallbackSoundType": "click"
                     },
                     "scanning": {
                         "inputs": [
@@ -436,14 +441,38 @@
                             "deck": "A::EN",
                             "model": "sentence mining",
                             "fields": {
-                                "word": "{expression}",
-                                "word audio": "",
-                                "image": "",
-                                "sentence": "{sentence}",
-                                "sentence audio": "",
-                                "definition": "{glossary-brief}",
-                                "ts": "",
-                                "definiton2": ""
+                                "word": {
+                                    "value": "{expression}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "word audio": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "image": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "sentence": {
+                                    "value": "{sentence}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "sentence audio": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "definition": {
+                                    "value": "{glossary-brief}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "ts": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "definiton2": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                }
                             }
                         },
                         "kanji": {
@@ -874,7 +903,8 @@
                         "stickySearchHeader": false,
                         "fontFamily": "",
                         "fontSize": 14,
-                        "lineHeight": "1.5"
+                        "lineHeight": "1.5",
+                        "averageFrequency": false
                     },
                     "popupWindow": {
                         "width": 400,
@@ -890,7 +920,8 @@
                         "enabled": true,
                         "volume": 100,
                         "autoPlay": false,
-                        "sources": []
+                        "sources": [],
+                        "fallbackSoundType": "click"
                     },
                     "scanning": {
                         "inputs": [
@@ -1093,14 +1124,38 @@
                             "deck": "A::EN",
                             "model": "sentence mining",
                             "fields": {
-                                "word": "{expression}",
-                                "word audio": "{audio}",
-                                "image": "",
-                                "sentence": "{sentence}",
-                                "sentence audio": "",
-                                "definition": "{glossary-brief}",
-                                "ts": "",
-                                "definiton2": ""
+                                "word": {
+                                    "value": "{expression}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "word audio": {
+                                    "value": "{audio}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "image": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "sentence": {
+                                    "value": "{sentence}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "sentence audio": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "definition": {
+                                    "value": "{glossary-brief}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "ts": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "definiton2": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                }
                             }
                         },
                         "kanji": {
@@ -1532,7 +1587,8 @@
                         "stickySearchHeader": false,
                         "fontFamily": "",
                         "fontSize": 14,
-                        "lineHeight": "1.5"
+                        "lineHeight": "1.5",
+                        "averageFrequency": false
                     },
                     "popupWindow": {
                         "width": 400,
@@ -1548,7 +1604,8 @@
                         "enabled": true,
                         "volume": 100,
                         "autoPlay": false,
-                        "sources": []
+                        "sources": [],
+                        "fallbackSoundType": "click"
                     },
                     "scanning": {
                         "inputs": [
@@ -1769,14 +1826,38 @@
                             "deck": "A::sentence mining",
                             "model": "sentence mining",
                             "fields": {
-                                "word": "{expression}",
-                                "word audio": "{audio}",
-                                "image": "",
-                                "sentence": "{sentence}",
-                                "sentence audio": "",
-                                "definition": "{glossary-brief}",
-                                "ts": "",
-                                "definiton2": ""
+                                "word": {
+                                    "value": "{expression}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "word audio": {
+                                    "value": "{audio}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "image": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "sentence": {
+                                    "value": "{sentence}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "sentence audio": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "definition": {
+                                    "value": "{glossary-brief}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "ts": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "definiton2": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                }
                             }
                         },
                         "kanji": {
@@ -2208,7 +2289,8 @@
                         "stickySearchHeader": false,
                         "fontFamily": "",
                         "fontSize": 14,
-                        "lineHeight": "1.5"
+                        "lineHeight": "1.5",
+                        "averageFrequency": false
                     },
                     "popupWindow": {
                         "width": 400,
@@ -2224,7 +2306,8 @@
                         "enabled": true,
                         "volume": 100,
                         "autoPlay": false,
-                        "sources": []
+                        "sources": [],
+                        "fallbackSoundType": "click"
                     },
                     "scanning": {
                         "inputs": [
@@ -2445,14 +2528,38 @@
                             "deck": "A::KR",
                             "model": "sentence mining",
                             "fields": {
-                                "word": "{expression}",
-                                "word audio": "{audio}",
-                                "image": "",
-                                "sentence": "{sentence}",
-                                "sentence audio": "",
-                                "definition": "{glossary-brief}",
-                                "ts": "",
-                                "definiton2": ""
+                                "word": {
+                                    "value": "{expression}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "word audio": {
+                                    "value": "{audio}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "image": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "sentence": {
+                                    "value": "{sentence}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "sentence audio": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "definition": {
+                                    "value": "{glossary-brief}",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "ts": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                },
+                                "definiton2": {
+                                    "value": "",
+                                    "overwriteMode": "coalesce"
+                                }
                             }
                         },
                         "kanji": {
