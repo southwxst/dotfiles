@@ -27,6 +27,10 @@ require("lazy").setup({
       vim.cmd.colorscheme "gruvbox"
     end,
   },
+{
+  "github/copilot.vim",
+  lazy=false,
+},
   {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
