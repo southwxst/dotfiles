@@ -54,8 +54,7 @@ bindsym $mod+u exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym $mod+Shift+u exec --no-startup-id  feh ./dotfiles/french/KB_France.svg.png 
 bindsym $mod+y exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 
-
-bindsym $mod+F1 exec --no-startup-idpactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym $mod+F1 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
  
 #bindsym $mod+Left exec --no-startup-id playerctl position 1-
 #bindsym $mod+Right exec --no-startup-id playerctl position 1+ 
