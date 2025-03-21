@@ -38,12 +38,14 @@
 # key =
 #
 # # Some config options have unique syntaxes for their value,
-# # which is explained in the docs for that config option.
+# # which is explained in the docs for that config option. fr
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+# theme = Brogrammer 
+theme = Apple System Colors 
+#theme = GruvboxLight
 #theme = GruvboxDark
-theme = GruvboxLight
-#background-opacity = 0.9
+#background-opacity = 0.8
 mouse-hide-while-typing = true
 confirm-close-surface = false
 gtk-titlebar = false
