@@ -19,6 +19,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Telescope recent files' })
 -- Markdown preview
 vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+vim.keymap.set("n", "<leader>lb", "<cmd>LiveServerToggle<CR>", { desc = "Live Server Toggle" })
 vim.keymap.set("n", "<leader>an", "<cmd>Anki<CR>", { desc = "Open Anki" })
 -- Spotify control
 vim.api.nvim_set_keymap(

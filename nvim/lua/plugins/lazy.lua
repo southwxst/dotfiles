@@ -36,8 +36,7 @@ require("lazy").setup({
           },
         },
       })
-
-      -- import mason-lspconfig after mason is set up
+       -- import mason-lspconfig after mason is set up
       local mason_lspconfig = require("mason-lspconfig")
       mason_lspconfig.setup({
         -- list of servers for mason to install
@@ -70,6 +69,12 @@ require("lazy").setup({
     priority = 1000, -- Make sure mason loads before lspconfig
   },
 
+{
+  "rafamadriz/friendly-snippets",
+  config = function()
+    require("luasnip.loaders.from_vscode").lazy_load()
+  end,
+},
   -- LSP config (must come after mason)
   {
     "neovim/nvim-lspconfig",
@@ -193,8 +198,15 @@ require("lazy").setup({
     end,
   },
 
-  -- Completion
- {
+{
+  "L3MON4D3/LuaSnip",
+  config = function()
+    require("luasnip.loaders.from_lua").lazy_load({
+      paths = { vim.fn.stdpath("config") .. "/lua/snippets" }
+    })
+  end,
+},
+{
   "hrsh7th/nvim-cmp",
   dependencies = {
     'neovim/nvim-lspconfig',
@@ -203,20 +215,12 @@ require("lazy").setup({
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     "saadparwaiz1/cmp_luasnip",
-    "L3MON4D3/LuaSnip",
-    -- ADD THIS:
-    "uga-rosa/cmp-dictionary",
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     require("luasnip.loaders.from_vscode").lazy_load()
 
-    -- Dictionary setup
-    require("cmp_dictionary").setup({
-      paths = { "/usr/share/dict/french"},
-      exact_length = 2,
-    })
 
     cmp.setup({
       completion = {
@@ -344,7 +348,14 @@ require("lazy").setup({
       -- Translation key bindings will be set up separately
     end
   },
-  
+   {
+	  "ngtuonghy/live-server-nvim",
+	  event = "VeryLazy",
+	  build = ":LiveServerInstall",
+	  config = function()
+	  require("live-server-nvim").setup({})
+	  end,
+    }, 
   -- Markdown and wiki
   {
     'vimwiki/vimwiki',
