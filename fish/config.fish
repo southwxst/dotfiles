@@ -15,19 +15,26 @@ end
 function te
     trans :en $argv
 end
+function tk
+    trans :ko $argv
+end
 
+function tfr
+    trans :fr $argv
+end
 function tj
     trans :ja $argv
 end
 alias pamcan=pacman
 # エイリアス設定（alias推奨）
 alias y=yazi
+alias p="sudo pacman"
 alias f=fastfetch
 alias tf=thefuck
 alias v=nvim
-alias p=python
-alias tf='trans :fr'
-alias wk='tomatoshell'
+alias py=python3
+alias gpt='tgpt -m gpt-4'
+# alias wk='tomatoshell'
 alias cl='xclip -selection clipboard'
 set -gx PATH $HOME/.local/bin $PATH
 set -x PATH $HOME/.emacs.d/bin $PATH
@@ -43,3 +50,28 @@ zoxide init fish | source
 #   set_color cyan; echo (pwd)
 #   set_color green; echo '> '
 # end
+
+function pomodoro
+    set val $argv[1]
+    switch $val
+        case "work"
+            set duration 25
+        case "break"
+            set duration 5
+        case '*'
+            echo "Usage: pomodoro [work|break]"
+            return 1
+    end
+
+    echo $val | lolcat
+    timer "$duration"m
+
+    # アラーム音を再生（例: /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga）
+    paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga 2>/dev/null
+
+    # 通知
+    notify-send "$val session done"
+end
+
+alias wk='pomodoro work'
+alias br='pomodoro break'
