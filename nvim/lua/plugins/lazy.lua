@@ -13,7 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Basic options
-vim.opt.spell = false
+-- vim.opt.spell = false
 -- Set up plugins
 require("lazy").setup({
   -- Mason (must come before lspconfig)
@@ -215,6 +215,8 @@ require("lazy").setup({
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     "saadparwaiz1/cmp_luasnip",
+    -- ADD THIS:
+    "uga-rosa/cmp-dictionary",
   },
   config = function()
     local cmp = require("cmp")
@@ -264,13 +266,13 @@ require("lazy").setup({
 },
   -- Appearance plugins
   {
-    "ellisonleao/gruvbox.nvim",
+"ellisonleao/gruvbox.nvim",
     priority = 1000, -- Make sure colorscheme loads first
     config = function()
       vim.cmd.colorscheme "gruvbox"
     end,
   },
-  {
+    {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
@@ -356,8 +358,35 @@ require("lazy").setup({
 	  require("live-server-nvim").setup({})
 	  end,
     }, 
+
+{
+  "windwp/nvim-autopairs",
+  event = "InsertEnter",
+  config = function()
+    require("nvim-autopairs").setup()
+  end,
+},
+{
+  'nvim-orgmode/orgmode',
+  event = 'VeryLazy',
+  ft = { 'org' },
+  config = function()
+    -- Setup orgmode
+    require('orgmode').setup({
+      org_agenda_files = '~/notes/',
+      org_default_notes_file = '~/notes/refile.org',
+    })
+
+    -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
+    -- add ~org~ to ignore_install
+    -- require('nvim-treesitter.configs').setup({
+    --   ensure_installed = 'all',
+    --   ignore_install = { 'org' },
+    -- })
+  end,
+},
   -- Markdown and wiki
-  {
+{
     'vimwiki/vimwiki',
   },
   {
