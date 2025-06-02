@@ -1,27 +1,45 @@
 vim.g.mapleader = " " -- Leader key set to space
+local keymap = vim.keymap
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+--vim.keymap.set("i", "<D-k>", function() print("CMD-j pressed") end)
 vim.keymap.set("n", "<leader>n", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>p", ":bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "yy", '"+yy', { noremap = true, silent = true })
 vim.keymap.set("n", "p", '"+p', { noremap = true, silent = true })
 vim.keymap.set("v", "p", '"+p', { noremap = true, silent = true })
 vim.keymap.set("v", "y", '"+y', { noremap = true, silent = true })
+vim.keymap.set("v", "yw", '"+yw', { noremap = true, silent = true })
+--toggleterm
+vim.keymap.set("n", "<leader><CR>", ":ToggleTerm<CR>", { noremap = true, silent = true, desc = "Toggle Terminal" })
+vim.keymap.set("v", "<leader><CR>", ":ToggleTerm<CR>", { noremap = true, silent = true, desc = "Toggle Terminal" })
+--prettier
+vim.keymap.set("n", "<leader>cp", ":Prettier<CR>", { noremap = true, silent = true, desc = "Prettier command" })
 
+vim.keymap.set("n", "<Leader>d", 'dd', { noremap = true, silent = true })
+vim.keymap.set("v", "<Leader>d", 'd', { noremap = true, silent = true })
+vim.keymap.set("n", "dd", '"_dd', { noremap = true, silent = true })
+vim.keymap.set("v", "d", '"_d', { noremap = true, silent = true })
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
 -- NvimTree key bindings
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
 vim.keymap.set('n', '<leader>r', ':NvimTreeRefresh<CR>', { desc = 'Refresh NvimTree' })
 vim.keymap.set('n', '<leader>a', ':NvimTreeFindFile<CR>', { desc = 'Find file in NvimTree' })
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Telescope recent files' })
 -- Markdown preview
 vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
 vim.keymap.set("n", "<leader>lb", "<cmd>LiveServerToggle<CR>", { desc = "Live Server Toggle" })
 vim.keymap.set("n", "<leader>an", "<cmd>Anki<CR>", { desc = "Open Anki" })
+-- window management
+keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 -- Spotify control
+
 vim.api.nvim_set_keymap(
   "n",
   "<leader>sz",
@@ -151,17 +169,3 @@ end, { nargs = "+" })
 local actions = require('telescope.actions')
 local telescope = require('telescope')
 
-telescope.setup({
-  defaults = {
-    mappings = {
-      i = {  -- insertモードでのマッピング
-        ["<D-j>"] = actions.move_selection_next,
-        ["<D-k>"] = actions.move_selection_previous,
-      },
-      n = {  -- normalモードでも使いたい場合
-        ["<D-j>"] = actions.move_selection_next,
-        ["<D-k>"] = actions.move_selection_previous,
-      },
-    },
-  },
-})

@@ -1,7 +1,3 @@
-# You can use it to add commands that run after login to macOS user session.
-# 'start-at-login' needs to be 'true' for 'after-login-command' to work
-# Available commands: https://nikitabobko.github.io/AeroSpace/commands
-after-login-command = []
 
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
@@ -56,6 +52,8 @@ preset = 'qwerty'
 #                 In this example, 24 is a default value when there is no match.
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+
+
 [gaps]
 inner.horizontal = 20
 inner.vertical = 20
@@ -63,7 +61,6 @@ outer.left = 20
 outer.bottom = 20
 outer.top = 20
 outer.right = 20
-
 # See https://nikitabobko.github.io/AeroSpace/guide#exec-env-vars
 [exec] # Again, you don't need to copy all config sections to your config.
 inherit-env-vars = true # If you don't touch "exec" section,
@@ -98,10 +95,11 @@ PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'
 alt-slash = 'layout accordion horizontal vertical'
 alt-backslash = 'layout tiles horizontal vertical'
 
- alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app' # use Super + N to open new alacritty terminal
- alt-w = 'exec-and-forget open -n /Applications/Chrome.app' # use Super + N to open new alacritty terminal
- alt-a = 'exec-and-forget open -n /Applications/Anki.app' # use Super + N to open new alacritty terminal
- #alt-shift-f = 'exec-and-forget open -n /Applications/.app' # use Super + N to open new alacritty terminal
+ #alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app' # use Super + N to open new alacritty terminal
+ #alt-w = 'exec-and-forget open -na "Chrome"' # use Super + N to open new alacritty terminal
+ #alt-w = 'exec-and-forget open -a "Arc"' # use Super + N to open new alacritty terminal
+#alt-a = 'exec-and-forget open -na "Anki"' # use Super + N to open new alacritty terminal
+#alt-shift-f = 'exec-and-forget open -n /Applications/.app' # use Super + N to open new alacritty terminal
 alt-q = 'close'
 alt-e = 'macos-native-minimize'
 alt-f = 'fullscreen'
@@ -127,6 +125,11 @@ alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
+
+#alt-v = 'split vertical'
+alt-s = 'layout v_accordion'               # 'layout stacking' in i3
+alt-t = 'layout h_accordion'               # 'l0xFF0096FFayout tabbed' in i3
+alt-p = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -150'
 alt-shift-equal = 'resize smart +150'
