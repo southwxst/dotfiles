@@ -41,14 +41,14 @@
 # # which is explained in the docs for that config option. fr
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
-theme = Brogrammer 
-#theme = Apple System Colors 
+#theme = Brogrammer 
+theme = Apple System Colors 
 
 #theme = GruvboxLight
 #theme = Adventure
 #theme = GruvboxDark
 #theme = GruvboxDarkHard
-#background-opacity = 0.97
+#background-opacity = 0.95
 mouse-hide-while-typing = true
 confirm-close-surface = false
 gtk-titlebar = false

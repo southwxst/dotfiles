@@ -4,56 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Global: Remap Command+I to standard F7 function (simulates Fn+F7)",
-                        "manipulators": [
-                            {
-                                "description": "Global: Change Command+I to standard F7 function",
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": { "mandatory": ["command"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f7",
-                                        "modifiers": ["fn"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Alacritty/Ghostty: Remap Command+R to Control+R (e.g., for reverse-i-search)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^org\\.alacritty$",
-                                            "^com\\.mitchellh\\.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "Alacritty/Ghostty: Change Command+R to Control+R",
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "r",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Global: Remap Command+Shift+Left/Right Arrow to Option+Shift+Left/Right Arrow (Word-wise selection)",
                         "manipulators": [
                             {
@@ -519,10 +469,6 @@
                 {
                     "from": { "key_code": "right_command" },
                     "to": [{ "key_code": "end" }]
-                },
-                {
-                    "from": { "key_code": "right_shift" },
-                    "to": [{ "key_code": "delete_forward" }]
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "jis" }
