@@ -4,116 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Alacritty/Ghostty: Remap Command+J/K to Control+J/K",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^org\\.alacritty$",
-                                            "^com\\.mitchellh\\.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "Alacritty/Ghostty: Change Command+J to Control+J",
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "j",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^org\\.alacritty$",
-                                            "^com\\.mitchellh\\.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "Alacritty/Ghostty: Change Command+L to Control+L",
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "l",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^org\\.alacritty$",
-                                            "^com\\.mitchellh\\.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "Alacritty/Ghostty: Change Command+K to Control+K",
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "k",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Chrome: Change command+Shift+I to Fn+F12 only in Chrome",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.google\\.Chrome$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "Chrome: Remap command+Shift+I to Fn+F12",
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": { "mandatory": ["command", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f12",
-                                        "modifiers": ["fn"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Alacritty/Ghostty: Remap Command+1~0 to Control+1~0",
                         "manipulators": [
                             {
@@ -379,6 +269,115 @@
                         ]
                     },
                     {
+                        "description": "Alacritty/Ghostty: Remap Command+H/J/K/L to Control+H/J/K/L",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.alacritty$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Alacritty/Ghostty: Change Command+H to Control+H",
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.alacritty$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Alacritty/Ghostty: Change Command+J to Control+J",
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "j",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.alacritty$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Alacritty/Ghostty: Change Command+K to Control+K",
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.alacritty$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Alacritty/Ghostty: Change Command+L to Control+L",
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Global: Remap Command+I to standard F7 function (simulates Fn+F7)",
                         "manipulators": [
                             {
@@ -455,6 +454,26 @@
                                     {
                                         "key_code": "right_arrow",
                                         "modifiers": ["left_option", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Global: Remap Option+Q to Command+Q (Quit Application)",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "description": "Global: Change Option+Q to Command+Q (Quit Application)",
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": { "mandatory": ["option"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -661,7 +680,8 @@
                         ]
                     },
                     {
-                        "description": "Alacritty/Ghostty: Remap Command+T to Control+T",
+                        "description": "Alacritty/Ghostty: Remap Command+J/K to Control+J/K",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -673,9 +693,9 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "Alacritty/Ghostty: Change Command+T to Control+T",
+                                "description": "Alacritty/Ghostty: Change Command+J to Control+J",
                                 "from": {
-                                    "key_code": "t",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "mandatory": ["command"],
                                         "optional": ["any"]
@@ -683,8 +703,116 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "t",
+                                        "key_code": "j",
                                         "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.alacritty$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Alacritty/Ghostty: Change Command+L to Control+L",
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.alacritty$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Alacritty/Ghostty: Change Command+K to Control+K",
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Google Chrome specific key remappings",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Chrome: Change Control+Shift+F to Command+Shift+F",
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f",
+                                        "modifiers": ["left_command", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Chrome: Change Command+Shift+Z to Control+Shift+Z",
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "z",
+                                        "modifiers": ["left_control", "shift"]
                                     }
                                 ],
                                 "type": "basic"

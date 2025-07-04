@@ -10,9 +10,6 @@ after-startup-command = [
 
 # Start AeroSpace at login
 start-at-login = true
-# Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
-enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
@@ -55,12 +52,12 @@ preset = 'qwerty'
 
 
 [gaps]
-inner.horizontal = 15
-inner.vertical = 15
-outer.left = 15
-outer.bottom = 15
-outer.top = 15
-outer.right = 15
+inner.horizontal = 20
+inner.vertical = 20
+outer.left = 20
+outer.bottom = 20
+outer.top = 20
+outer.right = 20
 # See https://nikitabobko.github.io/AeroSpace/guide#exec-env-vars
 [exec] # Again, you don't need to copy all config sections to your config.
 inherit-env-vars = true # If you don't touch "exec" section,
@@ -101,7 +98,7 @@ alt-backslash = 'layout tiles horizontal vertical'
 alt-a = 'exec-and-forget open  /Applications/Anki.app/' # use Super + N to open new alacritty terminal
 #alt-shift-f = 'exec-and-forget open -n /Applications/.app' # use Super + N to open new alacritty terminal
 alt-q = 'close'
-alt-e = 'macos-native-minimize'
+#alt-e = 'macos-native-minimize'
 alt-f = 'fullscreen'
 alt-up = 'focus-monitor prev'
 alt-down = 'focus-monitor next'
@@ -109,7 +106,7 @@ alt-shift-leftSquareBracket = 'move-workspace-to-monitor prev'
 alt-shift-rightSquareBracket = 'move-workspace-to-monitor next'
 alt-shift-c = 'reload-config'
 alt-space = 'layout floating tiling'
-alt-enter = 'exec-and-forget open  -na /Applications/Ghostty.app/'
+alt-enter = 'exec-and-forget open -na /Applications/Ghostty.app/'
 alt-shift-s = 'exec-and-forget open  /Applications/Spotify.app/'
 alt-shift-f = 'exec-and-forget open /System/Library/CoreServices/Finder.app'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
@@ -127,8 +124,7 @@ alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-
-#alt-v = 'split vertical'
+alt-e = 'layout tiles horizontal'
 alt-s = 'layout v_accordion'               # 'layout stacking' in i3
 alt-t = 'layout h_accordion'               # 'l0xFF0096FFayout tabbed' in i3
 alt-p = 'layout tiles horizontal vertical' # 'layout toggle split' in i3

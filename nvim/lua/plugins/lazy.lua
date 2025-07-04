@@ -2,6 +2,7 @@
 --
 -- set up lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+vim.opt.wrap = false
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -279,6 +280,7 @@ end,
   {
     'akinsho/bufferline.nvim',
     version = "*",
+    enabled = false,
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require("bufferline").setup{}
@@ -469,6 +471,16 @@ enabled = false,
     end
   },
 {
+  'numToStr/Comment.nvim',
+  opts = {
+    -- add any options here
+  },
+  lazy = false,
+  config = function() 
+    require('Comment').setup()
+  end
+},
+{
     'xiyaowong/transparent.nvim',
   },
 
@@ -478,7 +490,7 @@ enabled = false,
     config = function()
       require("themery").setup({
 
- themes = {"gruvbox", "vague","onedark", }, -- Your list of installed colorschemes.
+ themes = {"gruvbox", "vague","onedark","iceberg" }, -- Your list of installed colorschemes.
   livePreview = true, -- Apply theme while picking. Default to true.
       })
     end
@@ -486,6 +498,14 @@ enabled = false,
   {
     'rolf-stargate/ankifly.nvim'
   },
+  {
+	  'oahlen/iceberg.nvim'
+  },
+  {'ThePrimeagen/harpoon'},
+  {"mbbill/undotree"},
+{ 'RayenMnif/tgpt.nvim',
+
+},
   {
 'rainbowhxch/accelerated-jk.nvim'
   }

@@ -17,9 +17,8 @@ vim.keymap.set("n", "<leader><CR>", ":ToggleTerm<CR>", { noremap = true, silent 
 vim.keymap.set("v", "<leader><CR>", ":ToggleTerm<CR>", { noremap = true, silent = true, desc = "Toggle Terminal" })
 --prettier
 vim.keymap.set("n", "<leader>cp", ":Prettier<CR>", { noremap = true, silent = true, desc = "Prettier command" })
+vim.keymap.set("n", "<leader>tg", ":Chat<CR>", { noremap = true, silent = true, desc = "tgpt chat command" })
 
-vim.keymap.set("n", "<Leader>d", 'dd', { noremap = true, silent = true })
-vim.keymap.set("v", "<Leader>d", 'd', { noremap = true, silent = true })
 vim.keymap.set("n", "dd", '"_dd', { noremap = true, silent = true })
 vim.keymap.set("v", "d", '"_d', { noremap = true, silent = true })
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
@@ -39,6 +38,20 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 -- Spotify control
+-- haropoon settings
+local harpoon = require("harpoon")
+local ui = require("harpoon.ui")
+local mark = require("harpoon.mark")
+
+vim.keymap.set("n", "<leader>hm", ui.toggle_quick_menu)
+vim.keymap.set("n", "<leader>ha", mark.add_file)
+vim.keymap.set("n", "<C-1>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<C-2>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<C-3>", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<C-4>", function() ui.nav_file(4) end)
+
+-- undotreesettings
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 vim.api.nvim_set_keymap(
   "n",
